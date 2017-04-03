@@ -1,0 +1,36 @@
+{
+  "name": "acitius",
+  "version": "1.0.0",
+  "description": "Website for Acitius",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finajo/acitius.git"
+  },
+  "author": "Desiree",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/finajo/acitius/issues"
+  },
+  "homepage": "https://github.com/finajo/acitius#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.5.0",
+    "gulp-typescript": "^3.1.6",
+    "gulp-uglify": "^2.1.2",
+    "typescript": "^2.2.2"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}
