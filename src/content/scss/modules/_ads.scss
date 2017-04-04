@@ -1,9 +1,10 @@
 .ad {
-	@include border-radius($border-radius);
 	background: $color-primary-box-bg;
 	border: 1px solid $color-primary-border;
+	border-radius: $border-radius;
 
-	header &, footer & {
+	header &,
+	footer & {
 		background: $color-secondary-box-bg;
 		border-color: $color-secondary-border;
 	}

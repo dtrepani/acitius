@@ -1,7 +1,7 @@
 footer {
-	border-top: $border-size solid $color-secondary-border;
-	text-align: center;
 	padding: $padding $margin;
+	text-align: center;
+	border-top: $border-size solid $color-secondary-border;
 
 	.ad { margin: auto; }
 }

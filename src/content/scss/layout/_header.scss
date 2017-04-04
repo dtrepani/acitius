@@ -1,15 +1,15 @@
 .avatar {
 	$avatar-border: 2px;
 	$avatar-size: 30px;
-	$avatar-size-with-border: $avatar-size + $avatar-border*2;
+	$avatar-size-with-border: $avatar-size + $avatar-border * 2;
 
-	@include border-radius(50%);
-	background: $color-secondary-border;
-	border: $avatar-border solid $color-secondary-border;
-	height: $avatar-size-with-border;
-	overflow: hidden;
 	position: relative;
 	width: $avatar-size-with-border;
+	height: $avatar-size-with-border;
+	overflow: hidden;
+	background: $color-secondary-border;
+	border: $avatar-border solid $color-secondary-border;
+	border-radius: 50%;
 
 	img {
 		position: absolute;
@@ -25,78 +25,89 @@
 	@include font-size($font-small);
 	line-height: $font-small;
 
-	td {
-		text-align: right;
-	}
+	td { text-align: right; }
 
 	tr > td:last-child {
-		font-family: $font-header-stack;
 		padding-left: 5px;
+		font-family: $font-header-stack;
 		text-align: center;
 	}
 }
 
 .header {
 	@include font-size(20px);
-	border-bottom: $border-size solid $color-secondary-border;
 	height: 55px;
 	padding: 0 $margin 5px;
-	
+	border-bottom: $border-size solid $color-secondary-border;
+
 	.fa {
 		@include font-size($font-medium);
 		cursor: pointer;
 	}
 }
 
+.logo-container,
+.user-container,
+.user-container > div {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+}
+
 .search {
 	position: relative;
 
 	input {
-		@include border-radius(18px);
 		@include font-size($font-base);
+		width: 240px;
+		height: 30px;
+		padding: 5px 40px 5px 10px;
+		margin-left: $margin;
+		color: $color-secondary-text;
 		background: $color-secondary-box-bg;
 		border: $border-size solid $color-secondary-border;
-		color: $color-secondary-text;
-		height: 30px;
-		width: 240px;
-		margin-left: $margin;
-		padding: 5px 40px 5px 10px;
+		border-radius: 18px;
 	}
 
 	button {
-		border: none;
-		background: none;
-		color: $color-secondary-text;
 		position: absolute;
-		left: 215px;
 		top: 3px;
+		left: 215px;
+		color: $color-secondary-text;
+		background: none;
+		border: 0;
 	}
 }
 
 .user-container {
-	> div:not(.user), > table { margin-right: $margin; }
+	justify-content: flex-end;
+
+	> div:not(.user),
+	> table {
+		margin-right: $margin;
+	}
 
 	> div:not(.user) {
-		cursor: pointer;
+		position: relative;
 		width: 45px;
 		height: 45px;
-		position: relative;
 		text-align: center;
+		cursor: pointer;
 
 		.fa { @include font-size($font-large); }
 
 		.badge {
 			@include font-size($font-xsmall);
 			position: absolute;
-			left: 18px;
 			top: 2px;
+			left: 18px;
 		}
 	}
 }
 
 .user {
-	cursor: pointer;
 	font-weight: bold;
+	cursor: pointer;
 
 	.fa {
 		margin-right: 0;

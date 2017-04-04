@@ -1,0 +1,28 @@
+files:
+  include: 'src/content/scss/**/*.scss'
+  ignore:
+    - 'src/content/scss/vendor/'
+    - 'src/content/scss/base/_reset.scss'
+
+options:
+  formatter: stylish
+  merge-default-rules: true
+
+rules:
+  force-attribute-nesting: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
+  hex-notation:
+    - 1
+    - style: uppercase;
+  indentation:
+    - 1
+    - size: 'tab'
+  no-color-literals: 0
+  no-ids: 0
+  no-url-domains: 0
+  no-url-protocols: 0
+  placeholder-in-extend: 0
+  property-sort-order: 
+    - 1
+    - order: 'recess'
