@@ -1,0 +1,16 @@
+footer {
+	border-top: $border-size solid $color-secondary-border;
+	text-align: center;
+	padding: $padding $margin;
+
+	.ad { margin: auto; }
+}
+
+.footer-nav {
+	li {
+		display: inline-block;
+		margin: $margin 30px;
+	}
+
+	a { text-decoration: none; }
+}

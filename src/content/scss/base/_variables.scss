@@ -1,0 +1,59 @@
+// General variables used throughout the css.
+
+// COLORS
+// ----------------------------
+$color-accent: #13C2D7;
+$color-bg: #8DC4D8;
+
+// Primary: Nav, content, and widgets
+	$color-primary-bg: #FFFFFF;
+	$color-primary-border: #D8DFE1;
+	$color-primary-border-dim: #EAEEEF;
+
+	// Boxes inside primary, such as the chat or sub-nav
+	$color-primary-box-bg: #FAFBFB;
+
+	$color-primary-text: #40484E;
+	$color-primary-text-dim: #767F86;
+
+// Secondary: Header and footer
+	$color-secondary-bg: #303131;
+	$color-secondary-border: #3f4545;
+	$color-secondary-border-dim: #323636;
+
+	// Boxes inside secondary, such as the search
+	$color-secondary-box-bg: #46494A;
+
+	$color-secondary-text: #E7EBEC;
+	$color-secondary-text-dim: #BEC6C8;
+
+
+// FONT
+// ----------------------------
+$font-stack: 'Open Sans', sans-serif;
+$font-header-stack: 'Fredoka One', 'Century Gothic', sans-serif;
+
+$font-large:	26px;
+$font-medium:	22px;
+$font-base:		18px;
+$font-small:	14px;
+$font-xsmall:	12px;
+
+$font-logo-large: 92px;
+$font-logo-small: 48px;
+
+
+// GENERAL LAYOUT
+// ----------------------------
+$border-radius: 5px;
+$border-size: 1px;
+
+$margin: 20px;
+$padding: 20px;
+
+$breakpoints: (
+	xsmall:	570px,
+	small:	800px,
+	medium:	960px,
+	large:	1200px
+);

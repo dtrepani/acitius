@@ -1,0 +1,91 @@
+// TODO: For development purposes. REMOVE
+header { background: #5BB5C0; }
+.header { background: $color-secondary-bg; }
+
+$avatar-size: 30px;
+
+.avatar {
+	@include border-radius(50%);
+	background: $color-secondary-border;
+	border: 2px solid $color-secondary-border;
+	height: $avatar-size;
+	overflow: hidden;
+	position: relative;
+	width: $avatar-size;
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		max-width: $avatar-size;
+		min-width: $avatar-size;
+		min-height: $avatar-size;
+	}
+}
+
+.header, .logo-container {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+}
+
+.header {
+	@include font-size(20px);
+	border-bottom: $border-size solid $color-secondary-border;
+	height: 55px;
+	padding: 0 $margin 5px;
+
+	> * { flex: auto; }
+	
+	.fa {
+		@include font-size($font-medium);
+		cursor: pointer;
+	}
+}
+
+.search {
+	@include border-radius(18px);
+	background: $color-secondary-box-bg;
+	border: $border-size solid $color-secondary-border;
+	height: 30px;
+	margin-left: $margin;
+	max-width: 240px;
+	padding: 5px 10px;
+
+	input, button {
+		border: none;
+		background: none;
+		color: $color-secondary-text;
+
+		&:focus { outline: none; }
+	}
+
+	button { width: 30px; }
+	input { @include font-size($font-base); width: 200px; }
+}
+
+.user-container {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+
+	.fa { margin-right: $margin; }
+}
+
+.user {
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	font-weight: bold;
+
+	.fa {
+		margin-right: 0;
+		color: $color-secondary-text-dim;
+	}
+
+	.username {
+		margin: auto 5px;
+	}
+}

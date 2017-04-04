@@ -1,3 +1,46 @@
+// For general items.
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Fredoka+One);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background: $color-bg url('../images/daytime.jpg') repeat-x;
+	color: $color-primary-text;
+	font-family: $font-stack;
+	font-size: 100%;
+}
+
+a {
+	color: $color-accent;
+}
+
+button {
+	background: $color-accent;
+	border: none;
+	cursor: pointer;
+	font-size: $font-base;
+}
+
+h1, h2, h3 {
+	font-family: $font-header-stack;
+}
+
+h1 {
+	@include font-size($font-logo-small);
+	color: $color-accent;
+	display: inline;
+}
+
+h2 {
+	@include font-size($font-large);
+}
+
+h3 {
+	@include font-size($font-medium);
+}

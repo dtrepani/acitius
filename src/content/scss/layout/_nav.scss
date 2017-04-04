@@ -1,0 +1,52 @@
+.fa {
+	.news & { color: #CEC8A8; }
+	.my-stuff & { color: #DA6464; }
+	.pets & { color: #9981CF; }
+	.shops & { color: #5EADB5; }
+	.community & { color: #90C286; }
+	.world & { color: #52BFC2; }
+	.games & { color: #F0C063; }
+	.staff & { color: #789FBD; }
+}
+
+.main-nav {
+	margin-right: $margin;
+
+	> *:not(.menu) {
+		margin: $padding;
+	}
+}
+
+.menu {
+	> li > *:not(ul) {
+		display: block;
+		padding: $padding $padding $padding/4;
+	}
+}
+
+.menu-grp h2 {
+	cursor: pointer;
+}
+
+.menu-item a {
+	@extend h2;
+	color: $color-primary-text;
+	text-decoration: none;
+}
+
+.submenu {
+	$submenu-padding: 5px;
+
+	background: $color-primary-box-bg;
+	border-top: $border-size solid $color-primary-border;
+	border-bottom: $border-size solid $color-primary-border;
+	padding: $submenu-padding 0;
+
+	li a {
+		@include font-size($font-base);
+		color: $color-primary-text-dim;
+		display: block;
+		padding: $submenu-padding 0 $submenu-padding 60px;
+		text-decoration: none;
+	}
+}
