@@ -7,13 +7,13 @@
 html, body {
 	height: 100%;
 	width: 100%;
+	font-size: 100%;
 }
 
 body {
 	background: $color-bg url('../images/daytime.jpg') repeat-x;
 	color: $color-primary-text;
 	font-family: $font-stack;
-	font-size: 100%;
 }
 
 a {
@@ -29,6 +29,8 @@ button {
 
 h1, h2, h3 {
 	font-family: $font-header-stack;
+	margin: 0;
+	padding: 0;
 }
 
 h1 {
@@ -43,4 +45,22 @@ h2 {
 
 h3 {
 	@include font-size($font-medium);
+}
+
+nav {
+	& ul {
+		list-style: none;
+	}
+
+	& ul, & li {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+
+}
+
+.badge-primary { 
+	background: $color-accent;
+	color: $color-primary-text;
 }

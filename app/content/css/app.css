@@ -1,57 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Fredoka+One);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
-html, body, div, span, applet, object, iframe,
-h1, h2, .menu-item a, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
-
-body {
-  line-height: 1; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
 html, body {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  font-size: 100%; }
 
 body {
   background: #8DC4D8 url("../images/daytime.jpg") repeat-x;
   color: #40484E;
-  font-family: "Open Sans", sans-serif;
-  font-size: 100%; }
+  font-family: "Open Sans", sans-serif; }
 
 a {
   color: #13C2D7; }
@@ -63,7 +21,9 @@ button {
   font-size: 18px; }
 
 h1, h2, .menu-item a, h3 {
-  font-family: "Fredoka One", "Century Gothic", sans-serif; }
+  font-family: "Fredoka One", "Century Gothic", sans-serif;
+  margin: 0;
+  padding: 0; }
 
 h1 {
   font-size: 48px;
@@ -79,12 +39,17 @@ h3 {
   font-size: 22px;
   font-size: 1.375rem; }
 
-.main-container {
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  padding: 20px;
-  max-width: 1520px; }
+nav ul {
+  list-style: none; }
+
+nav ul, nav li {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+.badge-primary {
+  background: #13C2D7;
+  color: #40484E; }
 
 main, .main-nav, .widgets {
   -webkit-border-radius: 5px;
@@ -96,25 +61,11 @@ main, .main-nav, .widgets {
   border: 1px solid #D8DFE1; }
 
 .main-nav, .widgets {
-  flex: none;
   width: 240px; }
 
 header, footer {
   background: #303131;
-  color: #E7EBEC;
-  display: flex;
-  flex-direction: row; }
-
-.header, .footer {
-  flex: auto;
-  margin: auto;
-  max-width: 1520px; }
-
-header {
-  background: #5BB5C0; }
-
-.header {
-  background: #303131; }
+  color: #E7EBEC; }
 
 .avatar {
   -webkit-border-radius: 50%;
@@ -124,10 +75,10 @@ header {
   border-radius: 50%;
   background: #3f4545;
   border: 2px solid #3f4545;
-  height: 30px;
+  height: 34px;
   overflow: hidden;
   position: relative;
-  width: 30px; }
+  width: 34px; }
   .avatar img {
     position: absolute;
     top: 0;
@@ -136,62 +87,45 @@ header {
     min-width: 30px;
     min-height: 30px; }
 
-.header, .logo-container {
-  align-items: center;
-  display: flex;
-  flex-direction: row; }
-
 .header {
   font-size: 20px;
   font-size: 1.25rem;
   border-bottom: 1px solid #3f4545;
   height: 55px;
   padding: 0 20px 5px; }
-  .header > * {
-    flex: auto; }
   .header .fa {
     font-size: 22px;
     font-size: 1.375rem;
     cursor: pointer; }
 
-.search {
+.search input {
   -webkit-border-radius: 18px;
   -moz-border-radius: 18px;
   -ms-border-radius: 18px;
   -o-border-radius: 18px;
   border-radius: 18px;
+  font-size: 18px;
+  font-size: 1.125rem;
   background: #46494A;
   border: 1px solid #3f4545;
+  color: #E7EBEC;
   height: 30px;
   margin-left: 20px;
-  max-width: 240px;
-  padding: 5px 10px; }
-  .search input, .search button {
-    border: none;
-    background: none;
-    color: #E7EBEC; }
-    .search input:focus, .search button:focus {
-      outline: none; }
-  .search button {
-    width: 30px; }
-  .search input {
-    font-size: 18px;
-    font-size: 1.125rem;
-    width: 200px; }
+  width: 240px;
+  padding: 5px 40px 5px 10px; }
 
-.user-container {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end; }
-  .user-container .fa {
-    margin-right: 20px; }
+.search button {
+  border: none;
+  background: none;
+  color: #E7EBEC;
+  position: relative;
+  left: -50px; }
+
+.user-container > div:not(.user) {
+  margin-right: 20px; }
 
 .user {
-  align-items: center;
   cursor: pointer;
-  display: flex;
-  flex-direction: row;
   font-weight: bold; }
   .user .fa {
     margin-right: 0;
@@ -223,10 +157,8 @@ header {
 .staff .fa {
   color: #789FBD; }
 
-.main-nav {
-  margin-right: 20px; }
-  .main-nav > *:not(.menu) {
-    margin: 20px; }
+.main-nav > *:not(.menu) {
+  margin: 20px; }
 
 .menu > li > *:not(ul) {
   display: block;
@@ -253,11 +185,9 @@ header {
     text-decoration: none; }
 
 main {
-  flex: auto;
   padding: 20px; }
 
 .widgets {
-  margin-left: 20px;
   padding: 20px; }
   .widgets .fa {
     color: #13C2D7; }
@@ -270,10 +200,6 @@ footer {
   padding: 20px 20px; }
   footer .ad {
     margin: auto; }
-
-.footer-nav li {
-  display: inline-block;
-  margin: 20px 30px; }
 
 .footer-nav a {
   text-decoration: none; }

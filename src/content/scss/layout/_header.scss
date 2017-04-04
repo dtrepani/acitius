@@ -1,17 +1,15 @@
-// TODO: For development purposes. REMOVE
-header { background: #5BB5C0; }
-.header { background: $color-secondary-bg; }
-
-$avatar-size: 30px;
-
 .avatar {
+	$avatar-border: 2px;
+	$avatar-size: 30px;
+	$avatar-size-with-border: $avatar-size + $avatar-border*2;
+
 	@include border-radius(50%);
 	background: $color-secondary-border;
-	border: 2px solid $color-secondary-border;
-	height: $avatar-size;
+	border: $avatar-border solid $color-secondary-border;
+	height: $avatar-size-with-border;
 	overflow: hidden;
 	position: relative;
-	width: $avatar-size;
+	width: $avatar-size-with-border;
 
 	img {
 		position: absolute;
@@ -23,19 +21,11 @@ $avatar-size: 30px;
 	}
 }
 
-.header, .logo-container {
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-}
-
 .header {
 	@include font-size(20px);
 	border-bottom: $border-size solid $color-secondary-border;
 	height: 55px;
 	padding: 0 $margin 5px;
-
-	> * { flex: auto; }
 	
 	.fa {
 		@include font-size($font-medium);
@@ -44,40 +34,32 @@ $avatar-size: 30px;
 }
 
 .search {
-	@include border-radius(18px);
-	background: $color-secondary-box-bg;
-	border: $border-size solid $color-secondary-border;
-	height: 30px;
-	margin-left: $margin;
-	max-width: 240px;
-	padding: 5px 10px;
 
-	input, button {
+	input {
+		@include border-radius(18px);
+		@include font-size($font-base);
+		background: $color-secondary-box-bg;
+		border: $border-size solid $color-secondary-border;
+		color: $color-secondary-text;
+		height: 30px;
+		margin-left: $margin;
+		width: 240px;
+		padding: 5px 40px 5px 10px;
+	}
+
+	button {
 		border: none;
 		background: none;
 		color: $color-secondary-text;
-
-		&:focus { outline: none; }
+		position: relative;
+		left: -50px;
 	}
-
-	button { width: 30px; }
-	input { @include font-size($font-base); width: 200px; }
 }
 
-.user-container {
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-
-	.fa { margin-right: $margin; }
-}
+.user-container > div:not(.user) { margin-right: $margin; }
 
 .user {
-	align-items: center;
 	cursor: pointer;
-	display: flex;
-	flex-direction: row;
 	font-weight: bold;
 
 	.fa {

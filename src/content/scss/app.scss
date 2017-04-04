@@ -1,6 +1,9 @@
-@import "base/reset";
+@import "mixins/functions";
+@import "mixins/compatibility";
+@import "mixins/flex";
+@import "mixins/misc";
+
 @import "base/variables";
-@import "base/mixins";
 @import "base/extends";
 @import "base/core";
 

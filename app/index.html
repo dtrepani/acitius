@@ -9,195 +9,229 @@
 	<meta name="keywords" content="pets, games, virtual pet, flash games, kids virtual pet, rpg" />
 	<meta name="robots" content="index,follow" />
 	
+	<link
+		rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+		integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+		crossorigin="anonymous" />
+
 	<link rel="shortcut icon" href="http://www.acitius.com/amz.ico" type="image/x-icon" />
 	<link rel="alternate" title="Acitius RSS" href="http://www.acitius.com/rss.php" type="application/rss+xml" />
 	<link rel="stylesheet" type="text/css" href="content/css/app.min.css" />
-	
-	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
-
 	<header>
-		<div class="header">
-			<div class="logo-container">
-				<h1 class="logo">acitius</h1>
-				<form class="search" method="post" name="search" action="search.php">
-					<input type="text" name="search-text" placeholder="Search" />
-					<button type="submit" name="submit">
-						<i class="fa fa-fw fa-search" aria-hidden="true"></i>
-					</button>
-				</form>
-			</div>
-
-			<div class="user-container">
-				<div class="currency">
-					<p class="wsg"></p>
-					<p class="ap"></p>
-				</div>
-
-				<div class="notifications">
-					<i class="fa fa-fw fa-bell" aria-hidden="true"></i>
-				</div>
-				
-				<div class="mail">
-					<i class="fa fa-fw fa-envelope" aria-hidden="true"></i>
-				</div>
-				
-				<div class="user">
-					<div class="avatar">
-						<img src="content/images/avatar-default.png" />
+		<div class="header container">
+			<div class="row no-gutters">
+				<div class="logo-container col d-flex flex-row align-items-center">
+					<h1 class="logo">acitius</h1>
+					<div class="search align-self-center">
+						<input type="text" placeholder="Search" />
+						<button type="submit">
+							<i class="fa fa-fw fa-search" aria-hidden="true"></i>
+						</button>
 					</div>
-					<span class="username">User</span>
-					<i class="fa fa-fw fa-angle-down" aria-hidden="true"></i>
+				</div>
+
+				<div class="user-container col d-flex flex-row align-items-center justify-content-end">
+					<div class="currency">
+						<p class="wsg"></p>
+						<p class="ap"></p>
+					</div>
+
+					<div class="notifications">
+						<i class="fa fa-fw fa-bell" aria-hidden="true"></i>
+						<span class="badge badge-pill badge-primary">23</span>
+					</div>
+					
+					<div class="mail">
+						<i class="fa fa-fw fa-envelope" aria-hidden="true"></i>
+						<span class="badge badge-pill badge-primary">23</span>
+					</div>
+					
+					<div class="user d-flex flex-row align-items-center">
+						<div class="avatar">
+							<img src="content/images/avatar-default.png" />
+						</div>
+						<span class="username">User</span>
+						<i class="fa fa-fw fa-angle-down" aria-hidden="true"></i>
+					</div>
 				</div>
 			</div>
 		</div>
 	</header>
 
-	<div class="main-container">
-		<nav class="main-nav">
-			<ul class="menu">
-				<li class="menu-item news">
-					<a href="/news.php" title="News">
-						<i class="fa fa-fw fa-newspaper-o" aria-hidden="true"></i>
-						News
-					</a>
-				</li>
-				<li class="menu-grp my-stuff">
-					<h2 class="menu-grp-name">
-						<i class="fa fa-fw fa-heart" aria-hidden="true"></i>
-						My Stuff
+	<div class="main-container container py-4">
+		<div class="row">
+			<nav class="main-nav col-auto mr-4">
+				<ul class="menu">
+					<li class="menu-item news">
+						<a href="/news.php" title="News">
+							<i class="fa fa-fw fa-newspaper-o" aria-hidden="true"></i>
+							News
+						</a>
+					</li>
+					<li class="menu-grp my-stuff">
+						<h2 class="menu-grp-name">
+							<i class="fa fa-fw fa-heart" aria-hidden="true"></i>
+							My Stuff
+						</h2>
+						<ul class="submenu">
+							<li> <a href="/items.php" title="Inventory">Inventory</a> </li>
+							<li> <a href="/quests.php" title="Quests">Quests</a> </li>
+							<li> <a href="/achievements.php" title="Achievements">Achievements</a> </li>
+							<li> <a href="/collections.php" title="Collections">Collections</a> </li>
+							<li> <a href="/augmenting.php" title="Augmenting">Augmenting</a> </li>
+							<li> <a href="/achievements.php" title="Achievements">Achievements</a> </li>
+							<li> <a href="/cooking.php" title="Cooking">Cooking</a> </li>
+							<li> <a href="/fishing.php" title="Fishing">Fishing</a> </li>
+							<li> <a href="/gardening.php" title="Gardening">Gardening</a> </li>
+							<li> <a href="/galleries.php?mygalleries" title="Galleries">Galleries</a> </li>
+						</ul>
+					</li>
+					<li class="menu-grp pets">
+						<h2 class="menu-grp-name">
+							<i class="fa fa-fw fa-paw" aria-hidden="true"></i>
+							Pets
+						</h2>
+						<ul class="submenu">
+							<li> <a href="/pets.php" title="My Pets">My Pets</a> </li>
+							<li> <a href="/createpet.php" title="Create Pet">Create Pet</a> </li>
+							<li> <a href="/dating.php" title="Dating">Dating</a> </li>
+							<li> <a href="/sales.php" title="Sales">Sales</a> </li>
+							<li> <a href="/gamma.php" title="Gamma Machine">Gamma Machine</a> </li>
+							<li> <a href="/enchantments.php" title="Enchantments">Enchantments</a> </li>
+						</ul>
+					</li>
+					<li class="menu-grp shops">
+						<h2 class="menu-grp-name">
+							<i class="fa fa-fw fa-shopping-cart" aria-hidden="true"></i>
+							Shops
+						</h2>
+						<ul class="submenu">
+							<li> <a href="/myshop.php" title="My Shop">My Shop</a> </li>
+							<li> <a href="/explore.php?map=shops" title="Shops">Shops</a> </li>
+							<li> <a href="/webshop.php" title="Webshop">Webshop</a> </li>
+							<li> <a href="/crystals.php" title="Crystal Cavern">Crystal Cavern</a> </li>
+							<li> <a href="/itemsearch.php" title="Item Search">Item Search</a> </li>
+							<li> <a href="/trades.php" title="Trades">Trades</a> </li>
+							<li> <a href="/auctions.php" title="Auctions">Auctions</a> </li>
+						</ul>
+					</li>
+					<li class="menu-grp community">
+						<h2 class="menu-grp-name">
+							<i class="fa fa-fw fa-comments" aria-hidden="true"></i>
+							Community
+						</h2>
+						<ul class="submenu">
+							<li> <a href="/forums.php" title="Forums">Forums</a> </li>
+							<li> <a href="/aftermath.php" title="Aftermath Power">Aftermath Power</a> </li>
+							<li> <a href="/artist.php" title="Online Artist">Online Artist</a> </li>
+							<li> <a href="/holidays.php" title="Holidays">Holidays</a> </li>
+							<li> <a href="/wiki.php" title="Wiki">Wiki</a> </li>
+						</ul>
+					</li>
+					<li class="menu-grp world">
+						<h2 class="menu-grp-name">
+							<i class="fa fa-fw fa-globe" aria-hidden="true"></i>
+							World
+						</h2>
+						<ul class="submenu">
+							<li> <a href="/explore.php" title="Explore">Explore</a> </li>
+							<li> <a href="/arena.php" title="Arena">Arena</a> </li>
+						</ul>
+					</li>
+					<li class="menu-item games">
+						<a href="/games.php" title="Games">
+							<i class="fa fa-fw fa-star" aria-hidden="true"></i>
+							Games
+						</a>
+					</li>
+					<li class="menu-item staff">
+						<a href="/newstaff.php" title="Staff">
+							<i class="fa fa-fw fa-cogs" aria-hidden="true"></i>
+							Staff
+						</a>
+					</li>
+				</ul>
+
+				<div class="ad ad-small-square"></div>
+			</nav>
+
+			<main class="col">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nibh urna, gravida sit amet nulla tincidunt, mattis egestas est. Mauris lectus nunc, luctus vitae laoreet in, consectetur et magna. Maecenas et semper metus. Proin vel mauris feugiat, fringilla ante in, porttitor risus. Nulla eget sem at turpis pulvinar tristique id ac ipsum. Quisque id vulputate urna. Sed sodales tristique hendrerit. Sed vitae dignissim libero. Nulla sem turpis, sagittis ut tellus sit amet, sagittis pellentesque sapien. Nunc at libero nec diam ultricies fermentum nec at metus. Curabitur faucibus ex consectetur magna blandit fermentum. Nullam viverra, leo id venenatis imperdiet, magna nulla vehicula leo, ac venenatis nisl dolor vel justo. Curabitur elit purus, dignissim non sem pretium, commodo tincidunt arcu. Curabitur ultrices magna ullamcorper felis aliquet, vitae faucibus arcu vestibulum. Vestibulum ut ornare lorem, sit amet vehicula sapien.</p>
+
+				<p>Sed sit amet elementum ante, eget laoreet odio. In id ante nunc. Proin vitae est non mi mollis dapibus non ut ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis in dolor urna. Donec faucibus nisl nec odio sodales posuere. Nunc pretium nec tortor sit amet tincidunt. Nam non sem vel neque euismod facilisis. Sed pellentesque justo sed metus fermentum, nec pellentesque ante ornare. Vivamus vel dolor dui. Sed quis orci a turpis tempor lacinia id placerat nulla. Donec elementum ut risus vestibulum tempus.</p>
+
+				<p>Integer ut facilisis nisi. Morbi nibh urna, vulputate aliquet lobortis quis, imperdiet et lectus. Suspendisse facilisis massa sit amet dolor tempor fringilla. Aliquam sed pulvinar libero. Ut sagittis mi orci, quis ornare augue viverra at. Phasellus fringilla libero nec nulla auctor, a rutrum lorem tristique. Nam quis accumsan diam, in venenatis magna. Morbi in pulvinar massa, lacinia semper mi. Cras lacinia mollis massa feugiat placerat. Vivamus a risus orci. Aenean accumsan enim sed augue efficitur, quis pellentesque arcu eleifend. Sed at erat varius, rutrum lacus a, gravida mi.</p>
+
+				<p>Suspendisse volutpat iaculis nisi ac efficitur. Aliquam dignissim fermentum enim, id mollis lectus efficitur tincidunt. Aliquam erat volutpat. Duis feugiat ornare sagittis. Etiam bibendum ante nec nunc vehicula lacinia. Vestibulum vestibulum tempus pellentesque. Cras euismod ligula ac nulla facilisis consequat. Morbi faucibus cursus maximus. Aenean sapien mi, varius vel cursus id, molestie non libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque non ultricies velit.</p>
+
+				<p>Praesent nunc diam, pellentesque at neque quis, commodo semper nisi. Aenean vehicula elit et orci tincidunt scelerisque. Ut sodales mattis quam, id cursus sapien sodales et. Aenean vel tortor vel nisl egestas luctus. Cras id porta ipsum. Curabitur vel nisi tempus, egestas risus id, ullamcorper nulla. Vivamus quis aliquet turpis, nec venenatis nunc.</p>
+			</main>
+
+			<aside class="widgets col-auto ml-4">
+				<div class="widget-chat">
+					<h2>
+						<i class="fa fa-fw fa-comment" aria-hidden="true"></i>
+						Chat
 					</h2>
-					<ul class="submenu">
-						<li> <a href="/items.php" title="Inventory">Inventory</a> </li>
-						<li> <a href="/quests.php" title="Quests">Quests</a> </li>
-						<li> <a href="/achievements.php" title="Achievements">Achievements</a> </li>
-						<li> <a href="/collections.php" title="Collections">Collections</a> </li>
-						<li> <a href="/augmenting.php" title="Augmenting">Augmenting</a> </li>
-						<li> <a href="/achievements.php" title="Achievements">Achievements</a> </li>
-						<li> <a href="/cooking.php" title="Cooking">Cooking</a> </li>
-						<li> <a href="/fishing.php" title="Fishing">Fishing</a> </li>
-						<li> <a href="/gardening.php" title="Gardening">Gardening</a> </li>
-						<li> <a href="/galleries.php?mygalleries" title="Galleries">Galleries</a> </li>
-					</ul>
-				</li>
-				<li class="menu-grp pets">
-					<h2 class="menu-grp-name">
-						<i class="fa fa-fw fa-paw" aria-hidden="true"></i>
-						Pets
+				</div>
+				<div class="widget-notes">
+					<h2>
+						<i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i>
+						Notes
 					</h2>
-					<ul class="submenu">
-						<li> <a href="/pets.php" title="My Pets">My Pets</a> </li>
-						<li> <a href="/createpet.php" title="Create Pet">Create Pet</a> </li>
-						<li> <a href="/dating.php" title="Dating">Dating</a> </li>
-						<li> <a href="/sales.php" title="Sales">Sales</a> </li>
-						<li> <a href="/gamma.php" title="Gamma Machine">Gamma Machine</a> </li>
-						<li> <a href="/enchantments.php" title="Enchantments">Enchantments</a> </li>
-					</ul>
-				</li>
-				<li class="menu-grp shops">
-					<h2 class="menu-grp-name">
-						<i class="fa fa-fw fa-shopping-cart" aria-hidden="true"></i>
-						Shops
-					</h2>
-					<ul class="submenu">
-						<li> <a href="/myshop.php" title="My Shop">My Shop</a> </li>
-						<li> <a href="/explore.php?map=shops" title="Shops">Shops</a> </li>
-						<li> <a href="/webshop.php" title="Webshop">Webshop</a> </li>
-						<li> <a href="/crystals.php" title="Crystal Cavern">Crystal Cavern</a> </li>
-						<li> <a href="/itemsearch.php" title="Item Search">Item Search</a> </li>
-						<li> <a href="/trades.php" title="Trades">Trades</a> </li>
-						<li> <a href="/auctions.php" title="Auctions">Auctions</a> </li>
-					</ul>
-				</li>
-				<li class="menu-grp community">
-					<h2 class="menu-grp-name">
-						<i class="fa fa-fw fa-comments" aria-hidden="true"></i>
-						Community
-					</h2>
-					<ul class="submenu">
-						<li> <a href="/forums.php" title="Forums">Forums</a> </li>
-						<li> <a href="/aftermath.php" title="Aftermath Power">Aftermath Power</a> </li>
-						<li> <a href="/artist.php" title="Online Artist">Online Artist</a> </li>
-						<li> <a href="/holidays.php" title="Holidays">Holidays</a> </li>
-						<li> <a href="/wiki.php" title="Wiki">Wiki</a> </li>
-					</ul>
-				</li>
-				<li class="menu-grp world">
-					<h2 class="menu-grp-name">
-						<i class="fa fa-fw fa-globe" aria-hidden="true"></i>
-						World
-					</h2>
-					<ul class="submenu">
-						<li> <a href="/explore.php" title="Explore">Explore</a> </li>
-						<li> <a href="/arena.php" title="Arena">Arena</a> </li>
-					</ul>
-				</li>
-				<li class="menu-item games">
-					<a href="/games.php" title="Games">
-						<i class="fa fa-fw fa-star" aria-hidden="true"></i>
-						Games
-					</a>
-				</li>
-				<li class="menu-item staff">
-					<a href="/newstaff.php" title="Staff">
-						<i class="fa fa-fw fa-cogs" aria-hidden="true"></i>
-						Staff
-					</a>
-				</li>
-			</ul>
-
-			<div class="ad ad-small-square"></div>
-		</nav>
-
-		<main>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nibh urna, gravida sit amet nulla tincidunt, mattis egestas est. Mauris lectus nunc, luctus vitae laoreet in, consectetur et magna. Maecenas et semper metus. Proin vel mauris feugiat, fringilla ante in, porttitor risus. Nulla eget sem at turpis pulvinar tristique id ac ipsum. Quisque id vulputate urna. Sed sodales tristique hendrerit. Sed vitae dignissim libero. Nulla sem turpis, sagittis ut tellus sit amet, sagittis pellentesque sapien. Nunc at libero nec diam ultricies fermentum nec at metus. Curabitur faucibus ex consectetur magna blandit fermentum. Nullam viverra, leo id venenatis imperdiet, magna nulla vehicula leo, ac venenatis nisl dolor vel justo. Curabitur elit purus, dignissim non sem pretium, commodo tincidunt arcu. Curabitur ultrices magna ullamcorper felis aliquet, vitae faucibus arcu vestibulum. Vestibulum ut ornare lorem, sit amet vehicula sapien.</p>
-
-			<p>Sed sit amet elementum ante, eget laoreet odio. In id ante nunc. Proin vitae est non mi mollis dapibus non ut ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis in dolor urna. Donec faucibus nisl nec odio sodales posuere. Nunc pretium nec tortor sit amet tincidunt. Nam non sem vel neque euismod facilisis. Sed pellentesque justo sed metus fermentum, nec pellentesque ante ornare. Vivamus vel dolor dui. Sed quis orci a turpis tempor lacinia id placerat nulla. Donec elementum ut risus vestibulum tempus.</p>
-
-			<p>Integer ut facilisis nisi. Morbi nibh urna, vulputate aliquet lobortis quis, imperdiet et lectus. Suspendisse facilisis massa sit amet dolor tempor fringilla. Aliquam sed pulvinar libero. Ut sagittis mi orci, quis ornare augue viverra at. Phasellus fringilla libero nec nulla auctor, a rutrum lorem tristique. Nam quis accumsan diam, in venenatis magna. Morbi in pulvinar massa, lacinia semper mi. Cras lacinia mollis massa feugiat placerat. Vivamus a risus orci. Aenean accumsan enim sed augue efficitur, quis pellentesque arcu eleifend. Sed at erat varius, rutrum lacus a, gravida mi.</p>
-
-			<p>Suspendisse volutpat iaculis nisi ac efficitur. Aliquam dignissim fermentum enim, id mollis lectus efficitur tincidunt. Aliquam erat volutpat. Duis feugiat ornare sagittis. Etiam bibendum ante nec nunc vehicula lacinia. Vestibulum vestibulum tempus pellentesque. Cras euismod ligula ac nulla facilisis consequat. Morbi faucibus cursus maximus. Aenean sapien mi, varius vel cursus id, molestie non libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque non ultricies velit.</p>
-
-			<p>Praesent nunc diam, pellentesque at neque quis, commodo semper nisi. Aenean vehicula elit et orci tincidunt scelerisque. Ut sodales mattis quam, id cursus sapien sodales et. Aenean vel tortor vel nisl egestas luctus. Cras id porta ipsum. Curabitur vel nisi tempus, egestas risus id, ullamcorper nulla. Vivamus quis aliquet turpis, nec venenatis nunc.</p>
-		</main>
-
-		<aside class="widgets">
-			<div class="widget-chat">
-				<h2>
-					<i class="fa fa-fw fa-comment" aria-hidden="true"></i>
-					Chat
-				</h2>
-			</div>
-			<div class="widget-notes">
-				<h2>
-					<i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i>
-					Notes
-				</h2>
-			</div>
-			<div class="ad ad-small-rectangle"></div>
-		</aside>
+				</div>
+				<div class="ad ad-small-rectangle"></div>
+			</aside>
+		</div>
 	</div>
 
 	<footer>
-		<div class="footer">
+		<div class="footer container justify-content-center">
 			<div class="ad ad-leaderboard"></div>
 
-			<nav class="footer-nav">
-				<ul>
-					<li> <a href="/termsofservice.php" title="Terms of Service">Terms of Service</a> </li>
-					<li> <a href="/privacypolicy.php" title="Privacy Policy">Privacy Policy</a> </li>
-					<li> <a href="/rules.php" title="Rules">Rules</a> </li>
-					<li> <a href="/vitalstats.php" title="Stats">Stats</a> </li>
-					<li> <a href="/staff.php" title="Staff">Staff</a> </li>
-					<li> <a href="/linktous.php" title="Link to Us">Link to Us</a> </li>
-					<li> <a href="/faq.php" title="FA fa-fwQ">FAQ</a> </li>
+			<nav class="footer-nav py-2">
+				<ul class="nav justify-content-center">
+					<li class="nav-item">
+						<a href="/termsofservice.php" class="nav-link" title="Terms of Service">Terms of Service</a>
+					</li>
+					<li class="nav-item">
+						<a href="/privacypolicy.php" class="nav-link" title="Privacy Policy">Privacy Policy</a>
+					</li>
+					<li class="nav-item">
+						<a href="/rules.php" class="nav-link" title="Rules">Rules</a>
+					</li>
+					<li class="nav-item">
+						<a href="/vitalstats.php" class="nav-link" title="Stats">Stats</a>
+					</li>
+					<li class="nav-item">
+						<a href="/staff.php" class="nav-link" title="Staff">Staff</a>
+					</li>
+					<li class="nav-item">
+						<a href="/linktous.php" class="nav-link" title="Link to Us">Link to Us</a>
+					</li>
+					<li class="nav-item">
+						<a href="/faq.php" class="nav-link" title="FA fa-fwQ">FAQ</a>
+					</li>
 				</ul>
 			</nav>
 
 			<span class="copyright">© Acitius 2017, All Rights Reserved</span>
 		</div>
 	</footer>
-
+	
+	<script
+		src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" 
+		integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+		crossorigin="anonymous"></script>
+	<script 
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+		integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+		crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,15 +1,5 @@
 // For items that span multiple sections (such as the bgs for nav, content, and widgets).
 
-$max-width: 1520px;
-
-.main-container {
-	display: flex;
-	flex-direction: row;
-	margin: auto;
-	padding: $margin;
-	max-width: $max-width;
-}
-
 main, .main-nav, .widgets {
 	@include border-radius($border-radius);
 	background: $color-primary-bg;
@@ -17,19 +7,10 @@ main, .main-nav, .widgets {
 }
 
 .main-nav, .widgets {
-	flex: none;
 	width: 240px;
 }
 
 header, footer {
 	background: $color-secondary-bg;
 	color: $color-secondary-text;
-	display: flex;
-	flex-direction: row;
-}
-
-.header, .footer {
-	flex: auto;
-	margin: auto;
-	max-width: $max-width;
 }

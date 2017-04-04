@@ -1,0 +1,28 @@
+@mixin property($property, $value) {
+	-webkit-#{$property}: #{$value};
+	-moz-#{$property}: #{$value};
+	-ms-#{$property}: #{$value};
+	-o-#{$property}: #{$value};
+	#{$property}: #{$value};
+}
+
+@mixin border-radius($radius) {
+	@include property('border-radius', $radius);
+}
+
+@mixin transition($params) {
+	@include property('transition', $params);
+}
+
+@mixin opacity($opacity) {
+	@include property('opacity', $opacity);
+	filter: alpha(opacity=$opacity * 100);
+}
+
+@mixin keyframes($animation-name) {
+	-webkit-keyframes #{$animation-name} { @content; }
+	-moz-keyframes #{$animation-name} { @content; }
+	-ms-keyframes #{$animation-name} { @content; }
+	-o-keyframes #{$animation-name} { @content; }
+	keyframes #{$animation-name} { @content; }
+}
