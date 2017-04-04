@@ -87,6 +87,17 @@ header, footer {
     min-width: 30px;
     min-height: 30px; }
 
+.currency {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 14px; }
+  .currency td {
+    text-align: right; }
+  .currency tr > td:last-child {
+    font-family: "Fredoka One", "Century Gothic", sans-serif;
+    padding-left: 5px;
+    text-align: center; }
+
 .header {
   font-size: 20px;
   font-size: 1.25rem;
@@ -98,31 +109,49 @@ header, footer {
     font-size: 1.375rem;
     cursor: pointer; }
 
-.search input {
-  -webkit-border-radius: 18px;
-  -moz-border-radius: 18px;
-  -ms-border-radius: 18px;
-  -o-border-radius: 18px;
-  border-radius: 18px;
-  font-size: 18px;
-  font-size: 1.125rem;
-  background: #46494A;
-  border: 1px solid #3f4545;
-  color: #E7EBEC;
-  height: 30px;
-  margin-left: 20px;
-  width: 240px;
-  padding: 5px 40px 5px 10px; }
+.search {
+  position: relative; }
+  .search input {
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    -ms-border-radius: 18px;
+    -o-border-radius: 18px;
+    border-radius: 18px;
+    font-size: 18px;
+    font-size: 1.125rem;
+    background: #46494A;
+    border: 1px solid #3f4545;
+    color: #E7EBEC;
+    height: 30px;
+    width: 240px;
+    margin-left: 20px;
+    padding: 5px 40px 5px 10px; }
+  .search button {
+    border: none;
+    background: none;
+    color: #E7EBEC;
+    position: absolute;
+    left: 215px;
+    top: 3px; }
 
-.search button {
-  border: none;
-  background: none;
-  color: #E7EBEC;
-  position: relative;
-  left: -50px; }
+.user-container > div:not(.user), .user-container > table {
+  margin-right: 20px; }
 
 .user-container > div:not(.user) {
-  margin-right: 20px; }
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  text-align: center; }
+  .user-container > div:not(.user) .fa {
+    font-size: 26px;
+    font-size: 1.625rem; }
+  .user-container > div:not(.user) .badge {
+    font-size: 12px;
+    font-size: 0.75rem;
+    position: absolute;
+    left: 18px;
+    top: 2px; }
 
 .user {
   cursor: pointer;
