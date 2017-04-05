@@ -1,13 +1,10 @@
-/*!
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);@import url(https://fonts.googleapis.com/css?family=Fredoka+One);@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);/*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
  * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
-@import url("https://fonts.googleapis.com/css?family=Fredoka+One");
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -521,7 +518,7 @@ mark,
   font-size: 80%;
   color: #636c72; }
   .blockquote-footer::before {
-    content: "\2014 \00A0"; }
+    content: "\2014   \A0"; }
 
 .blockquote-reverse {
   padding-right: 1rem;
@@ -534,7 +531,7 @@ mark,
   content: ""; }
 
 .blockquote-reverse .blockquote-footer::after {
-  content: "\00A0 \2014"; }
+  content: "\A0   \2014"; }
 
 .img-fluid {
   max-width: 100%;
@@ -6023,7 +6020,7 @@ body {
 body {
   font-family: "Open Sans", sans-serif;
   color: #40484E;
-  background: #8DC4D8 url("../images/daytime.jpg") repeat-x; }
+  background: #8DC4D8 url("/public/images/daytime.jpg") repeat-x; }
 
 a {
   color: #13C2D7;
@@ -6127,7 +6124,7 @@ footer {
 
 .header-banner {
   height: 150px;
-  background: url("../images/nighttime.jpg") repeat; }
+  background: url("/public/images/nighttime.jpg") repeat; }
 
 .logo a:hover {
   color: unset;
@@ -6511,3 +6508,5 @@ footer {
   font-size: 0.75rem;
   background: #FAFBFB !important;
   border: 1px solid #D8DFE1; }
+
+/*# sourceMappingURL=style.css.map*/

@@ -1,18 +1,17 @@
-const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
 
-const extractSass = new ExtractTextPlugin({
-	filename: '[name].[contenthash].css',
-	disable: process.env.NODE_ENV === 'development'
-});
+const buildDir = path.resolve(__dirname, 'public');
+const srcDir = path.resolve(__dirname, 'src');
+const environment = process.env.NODE_ENV || 'development';
 
-const BUILD_DIR = path.resolve(__dirname, 'public');
-const SRC_DIR = path.resolve(__dirname, 'src');
+const extractSass = new ExtractTextPlugin({ filename: 'style.css' });
 
 module.exports = {
-	entry: [`${SRC_DIR}/js/app.jsx`, `${SRC_DIR}/scss/app.scss`],
+	entry: [`${srcDir}/js/app.jsx`, `${srcDir}/scss/app.scss`],
 	output: {
-		path: BUILD_DIR,
+		path: buildDir,
 		filename: 'bundle.js'
 	},
 	devtool: 'source-map',
@@ -20,12 +19,12 @@ module.exports = {
 		rules: [
 			{
 				test: /\.jsx?$/,
-				include: SRC_DIR,
+				include: srcDir,
 				use: 'babel-loader'
 			},
 			{
 				test: /\.scss$/,
-				include: SRC_DIR,
+				include: srcDir,
 				use: extractSass.extract({
 					use: [
 						{
@@ -46,5 +45,8 @@ module.exports = {
 			}
 		]
 	},
-	plugins: [extractSass]
+	plugins: [
+		extractSass,
+		new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify(environment) } })
+	]
 };
