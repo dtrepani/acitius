@@ -6125,6 +6125,10 @@ footer {
   .header div:focus > .fa, .header div:hover > .fa {
     color: #13C2D7; }
 
+.header-banner {
+  height: 150px;
+  background: url("../images/nighttime.jpg") repeat; }
+
 .logo a:hover {
   color: unset;
   text-decoration: none; }
@@ -6157,6 +6161,11 @@ footer {
     background: none;
     border: 0; }
 
+.toggle-nav .fa {
+  font-size: 36px;
+  font-size: 2.25rem;
+  margin-right: 20px; }
+
 .user-container {
   justify-content: flex-end; }
   .user-container > div {
@@ -6178,7 +6187,7 @@ footer {
       font-size: 12px;
       font-size: 0.75rem;
       position: absolute;
-      top: 2px;
+      top: 6px;
       left: 18px; }
 
 .user {

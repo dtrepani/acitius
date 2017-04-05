@@ -1,23 +1,38 @@
 {
   "name": "acitius",
+  "author": "Desiree",
   "version": "1.0.0",
   "description": "Website for Acitius",
+  "private": true,
   "main": "app/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/finajo/acitius.git"
   },
-  "author": "Desiree",
+  "homepage": "https://github.com/finajo/acitius#readme",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/finajo/acitius/issues"
   },
-  "homepage": "https://github.com/finajo/acitius#readme",
+  "babel": {
+    "presets": [
+      "env",
+      "es2015",
+      "react"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.3.2",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
+    "extract-text-webpack-plugin": "^2.1.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.1",
@@ -33,9 +48,14 @@
     "gulp-sourcemaps": "^2.5.0",
     "gulp-typescript": "^3.1.6",
     "gulp-uglify": "^2.1.2",
-    "typescript": "^2.2.2"
+    "react-router": "^4.0.0",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.3.3"
   },
   "dependencies": {
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   }
 }

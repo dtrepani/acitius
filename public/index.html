@@ -15,9 +15,13 @@
 </head>
 <body>
 	<header>
+		<div class="header-banner hidden-md-down"></div>
 		<div class="header container">
 			<div class="row no-gutters">
 				<div class="logo-container col-md-5 col">
+					<div class="toggle-nav">
+						<i class="fa fa-bars hidden-md-up" aria-hidden="true"></i>
+					</div>
 					<h1 class="logo"><a href="/index.php">acitius</a></h1>
 					<form class="search">
 						<input type="text" placeholder="Search" />
@@ -65,7 +69,7 @@
 
 	<div class="main-container container py-md-4">
 		<div class="row">
-			<nav class="main-nav col-auto mr-md-4 ml-md-4" id="accordion" role="tablist" aria-multiselectable="true">
+			<nav class="main-nav col-auto mr-md-4 ml-md-4" id="accordion" aria-multiselectable="true">
 				<div class="card">
 					<div class="card-header" role="tab">
 						<a href="/news.php" title="News" id="news">
@@ -336,6 +340,8 @@
 		src="https://code.jquery.com/jquery-3.2.1.min.js"
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/react@15/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" 
 		integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
 		crossorigin="anonymous"></script>

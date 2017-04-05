@@ -54,6 +54,11 @@
 	div:focus > .fa, div:hover > .fa { color: $color-accent; }
 }
 
+.header-banner {
+	height: 150px;
+	background: url('../images/nighttime.jpg') repeat;
+}
+
 .logo a {
 	@extend %sweep-up-animation;
 
@@ -97,6 +102,11 @@
 	}
 }
 
+.toggle-nav .fa {
+	@include font-size(36px);
+	margin-right: 20px;
+}
+
 .user-container {
 	justify-content: flex-end;
 
@@ -127,7 +137,7 @@
 		.badge {
 			@include font-size($font-xsmall);
 			position: absolute;
-			top: 2px;
+			top: 6px;
 			left: 18px;
 		}
 	}
