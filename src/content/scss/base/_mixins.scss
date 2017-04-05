@@ -29,6 +29,25 @@
 			@content;
 		}
 	} @else {
-		@warn "No such breakpoint '#{$breakpoint}' exists.";
+		@warn 'No such breakpoint '#{$breakpoint}' exists.';
+	}
+}
+
+/**
+* Requires the ::before text to be formatted with relevant changes and to 
+* use @extend sweep-text-right-animation-hover on the relevant hover element.
+*/
+@mixin sweep-text-right-animation($top: 0, $left: 0) {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		top: $top;
+		left: $left;
+		max-width: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		content: attr(title);
+		transition: max-width $speed-slow;
 	}
 }

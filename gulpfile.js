@@ -37,7 +37,7 @@ gulp.task('css', () => {
 			.pipe($.postcss(plugins))
 			.pipe($.sourcemaps.write('.'))
 			.pipe(gulp.dest(dirPaths.css));
-	}, 100);
+	}, 400);
 });
 
 gulp.task('watch', () => {

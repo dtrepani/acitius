@@ -8,12 +8,6 @@
 	<meta name="description" content="Acitius is a virtual pet RPG with battles, quests, fishing, cooking, and more!" />
 	<meta name="keywords" content="pets, games, virtual pet, flash games, kids virtual pet, rpg" />
 	<meta name="robots" content="index,follow" />
-	
-	<link
-		rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-		integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
-		crossorigin="anonymous" />
 
 	<link rel="shortcut icon" href="http://www.acitius.com/amz.ico" type="image/x-icon" />
 	<link rel="alternate" title="Acitius RSS" href="http://www.acitius.com/rss.php" type="application/rss+xml" />
@@ -23,34 +17,36 @@
 	<header>
 		<div class="header container">
 			<div class="row no-gutters">
-				<div class="logo-container col">
-					<h1 class="logo">acitius</h1>
-					<div class="search align-self-center">
+				<div class="logo-container col-md-5 col">
+					<h1 class="logo"><a href="/index.php">acitius</a></h1>
+					<form class="search">
 						<input type="text" placeholder="Search" />
 						<button type="submit">
 							<i class="fa fa-fw fa-search" aria-hidden="true"></i>
 						</button>
-					</div>
+					</form>
 				</div>
 
-				<div class="user-container col">
-					<table class="currency">
-						<tr class="wsg">
-							<td>2,300</td>
-							<td>WSG</td>
-						</tr>
-						<tr class="ap">
-							<td>230,000</td>
-							<td>AP</td>
-						</tr>
-					</table>
+				<div class="user-container col-md-7 col">
+					<div class="curreny-container">
+						<table class="currency">
+							<tr class="wsg">
+								<td>2,300</td>
+								<td><a href="/webshop.php">WSG</a></td>
+							</tr>
+							<tr class="ap">
+								<td>230,000</td>
+								<td><a href="/bank.php">AP</a></td>
+							</tr>
+						</table>
+					</div>
 
-					<div class="notifications">
+					<div class="icon notifications">
 						<i class="fa fa-fw fa-bell" aria-hidden="true"></i>
 						<span class="badge badge-pill badge-primary">23</span>
 					</div>
 					
-					<div class="mail">
+					<div class="icon mail">
 						<i class="fa fa-fw fa-envelope" aria-hidden="true"></i>
 						<span class="badge badge-pill badge-primary">23</span>
 					</div>
@@ -59,7 +55,7 @@
 						<div class="avatar">
 							<img src="content/images/avatar-default.png" />
 						</div>
-						<span class="username">User</span>
+						<span class="username hidden-md-down" data-hover="User">User</span>
 						<i class="fa fa-fw fa-angle-down" aria-hidden="true"></i>
 					</div>
 				</div>
@@ -67,21 +63,21 @@
 		</div>
 	</header>
 
-	<div class="main-container container py-4">
+	<div class="main-container container py-md-4">
 		<div class="row">
-			<nav class="main-nav col-auto mr-4" id="accordion" role="tablist" aria-multiselectable="true">
+			<nav class="main-nav col-auto mr-md-4 ml-md-4" id="accordion" role="tablist" aria-multiselectable="true">
 				<div class="card">
 					<div class="card-header" role="tab">
 						<a href="/news.php" title="News" id="news">
 							<i class="fa fa-fw fa-newspaper-o" aria-hidden="true"></i>
-							News
+							<span class="nav-item">News</span>
 						</a>
 					</div>
 				</div>
 
 				<div class="card">
 					<div class="card-header" role="tab">
-						<a data-toggle="collapse" data-parent="#accordion"	href="#sub-my-stuff" id="my-stuff" 
+						<a data-toggle="collapse" data-parent="#accordion"	href="#sub-my-stuff" title="My Stuff" id="my-stuff" 
 							aria-expanded="false" aria-controls="sub-my-stuff">
 							<i class="fa fa-fw fa-heart" aria-hidden="true"></i>
 							My Stuff
@@ -104,7 +100,7 @@
 
 				<div class="card">
 					<div class="card-header" role="tab">
-						<a data-toggle="collapse" data-parent="#accordion"	href="#sub-pets" id="pets" 
+						<a data-toggle="collapse" data-parent="#accordion"	href="#sub-pets" id="pets"  title="Pets"
 							aria-expanded="false" aria-controls="sub-pets">
 							<i class="fa fa-fw fa-paw" aria-hidden="true"></i>
 							Pets
@@ -123,7 +119,7 @@
 
 				<div class="card">
 					<div class="card-header" role="tab">
-						<a data-toggle="collapse" data-parent="#accordion"	href="#sub-shops" id="shops" 
+						<a data-toggle="collapse" data-parent="#accordion"	href="#sub-shops" id="shops" title="Shops"
 							aria-expanded="false" aria-controls="sub-shops">
 							<i class="fa fa-fw fa-shopping-cart" aria-hidden="true"></i>
 							Shops
@@ -143,7 +139,7 @@
 
 				<div class="card">
 					<div class="card-header" role="tab">
-						<a data-toggle="collapse" data-parent="#accordion"	href="#sub-community" id="community" 
+						<a data-toggle="collapse" data-parent="#accordion"	href="#sub-community" id="community" title="Community"
 							aria-expanded="false" aria-controls="sub-community">
 							<i class="fa fa-fw fa-comments" aria-hidden="true"></i>
 							Community
@@ -161,7 +157,7 @@
 
 				<div class="card">
 					<div class="card-header" role="tab">
-						<a data-toggle="collapse" data-parent="#accordion"	href="#sub-world" id="world" 
+						<a data-toggle="collapse" data-parent="#accordion"	href="#sub-world" id="world" title="World"
 							aria-expanded="false" aria-controls="sub-world">
 							<i class="fa fa-fw fa-globe" aria-hidden="true"></i>
 							World
@@ -186,8 +182,17 @@
 				<div class="card">
 					<div class="card-header" role="tab">
 						<a href="/newstaff.php" title="Staff" id="staff">
-							<i class="fa fa-fw fa-cogs" aria-hidden="true"></i>
+							<i class="fa fa-fw fa-id-badge" aria-hidden="true"></i>
 							Staff
+						</a>
+					</div>
+				</div>
+
+				<div class="card hidden-lg-up">
+					<div class="card-header" role="tab">
+						<a href="/widgets.php" title="Widgets" id="widgets">
+							<i class="fa fa-fw fa-cogs" aria-hidden="true"></i>
+							Widgets
 						</a>
 					</div>
 				</div>
@@ -195,7 +200,7 @@
 				<div class="ad ad-small-square"></div>
 			</nav>
 
-			<main class="col">
+			<main class="col mr-md-4">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nibh urna, gravida sit amet nulla tincidunt, mattis egestas est. Mauris lectus nunc, luctus vitae laoreet in, consectetur et magna. Maecenas et semper metus. Proin vel mauris feugiat, fringilla ante in, porttitor risus. Nulla eget sem at turpis pulvinar tristique id ac ipsum. Quisque id vulputate urna. Sed sodales tristique hendrerit. Sed vitae dignissim libero. Nulla sem turpis, sagittis ut tellus sit amet, sagittis pellentesque sapien. Nunc at libero nec diam ultricies fermentum nec at metus. Curabitur faucibus ex consectetur magna blandit fermentum. Nullam viverra, leo id venenatis imperdiet, magna nulla vehicula leo, ac venenatis nisl dolor vel justo. Curabitur elit purus, dignissim non sem pretium, commodo tincidunt arcu. Curabitur ultrices magna ullamcorper felis aliquet, vitae faucibus arcu vestibulum. Vestibulum ut ornare lorem, sit amet vehicula sapien.</p>
 
 				<p>Sed sit amet elementum ante, eget laoreet odio. In id ante nunc. Proin vitae est non mi mollis dapibus non ut ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis in dolor urna. Donec faucibus nisl nec odio sodales posuere. Nunc pretium nec tortor sit amet tincidunt. Nam non sem vel neque euismod facilisis. Sed pellentesque justo sed metus fermentum, nec pellentesque ante ornare. Vivamus vel dolor dui. Sed quis orci a turpis tempor lacinia id placerat nulla. Donec elementum ut risus vestibulum tempus.</p>
@@ -207,18 +212,86 @@
 				<p>Praesent nunc diam, pellentesque at neque quis, commodo semper nisi. Aenean vehicula elit et orci tincidunt scelerisque. Ut sodales mattis quam, id cursus sapien sodales et. Aenean vel tortor vel nisl egestas luctus. Cras id porta ipsum. Curabitur vel nisi tempus, egestas risus id, ullamcorper nulla. Vivamus quis aliquet turpis, nec venenatis nunc.</p>
 			</main>
 
-			<aside class="widgets col-auto ml-4">
-				<div class="widget-chat">
+			<aside class="widgets col-auto mr-md-4 hidden-md-down">
+				<div class="widget widget-chat">
 					<h2>
 						<i class="fa fa-fw fa-comment" aria-hidden="true"></i>
 						Chat
+						<i class="fa fa-fw fa-thumb-tack" aria-hidden="true"></i>
 					</h2>
+					<div class="card">
+						<div class="card-block chat scrollbar-container">
+							<div class="chat-history scrollbar">
+								<div class="chat-msg">
+									<span class="chat-time">15:00</span> 
+									<a href="profile.php?user=#" class="chat-user">Username</a>:
+									<span class="chat-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+								</div>
+								<div class="chat-msg">
+									<span class="chat-time">15:00</span> 
+									<a href="profile.php?user=#" class="chat-user">Username</a>:
+									<span class="chat-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+								</div>
+								<div class="chat-msg">
+									<span class="chat-time">15:00</span> 
+									<a href="profile.php?user=#" class="chat-user">Username</a>:
+									<span class="chat-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+								</div>
+								<div class="chat-msg">
+									<span class="chat-time">15:00</span> 
+									<a href="profile.php?user=#" class="chat-user">Username</a>:
+									<span class="chat-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+								</div>
+								<div class="chat-msg">
+									<span class="chat-time">15:00</span> 
+									<a href="profile.php?user=#" class="chat-user">Username</a>:
+									<span class="chat-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+								</div>
+								<div class="chat-msg">
+									<span class="chat-time">15:00</span> 
+									<a href="profile.php?user=#" class="chat-user">Username</a>:
+									<span class="chat-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+								</div>
+								<div class="chat-msg">
+									<span class="chat-time">15:00</span> 
+									<a href="profile.php?user=#" class="chat-user">Username</a>:
+									<span class="chat-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+								</div>
+								<div class="chat-msg">
+									<span class="chat-time">15:00</span> 
+									<a href="profile.php?user=#" class="chat-user">Username</a>:
+									<span class="chat-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+								</div>
+								<div class="chat-msg">
+									<span class="chat-time">15:00</span> 
+									<a href="profile.php?user=#" class="chat-user">Username</a>:
+									<span class="chat-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+								</div>
+								<div class="chat-msg">
+									<span class="chat-time">18:00</span> 
+									<a href="profile.php?user=#" class="chat-user">Foo</a>:
+									<span class="chat-text">lol</span>
+								</div>
+							</div>
+
+							<form class="chat-send">
+								<input type="text" placeholder="Message" />
+								<button type="submit">
+									<i class="fa fa-fw fa-send-o" aria-hidden="true"></i>
+								</button>
+							</form>
+						</div>
+					</div>
 				</div>
-				<div class="widget-notes">
+				<div class="widget widget-notes">
 					<h2>
 						<i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i>
 						Notes
+						<i class="fa fa-fw fa-thumb-tack" aria-hidden="true"></i>
 					</h2>
+					<div class="form-group notes">
+						<textarea class="form-control scrollbar" rows="10"></textarea>
+					</div>
 				</div>
 				<div class="ad ad-small-rectangle"></div>
 			</aside>

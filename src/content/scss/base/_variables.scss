@@ -3,6 +3,7 @@
 // COLORS
 // ----------------------------
 $color-accent: #13C2D7;
+$color-accent-dim: rgba($color-accent, 0.2);
 $color-bg: #8DC4D8;
 
 // Primary: Nav, content, and widgets
@@ -12,9 +13,10 @@ $color-primary-border-dim: #EAEEEF;
 
 // Boxes inside primary, such as the chat or sub-nav
 $color-primary-box-bg: #FAFBFB;
+$color-primary-box-bg-dark: #F1F1F1;
 
 $color-primary-text: #40484E;
-$color-primary-text-dim: #767F86;
+$color-primary-text-dim: #B5C0C3;
 
 // Secondary: Header and footer
 $color-secondary-bg: #303131;
@@ -23,18 +25,20 @@ $color-secondary-border-dim: #323636;
 
 // Boxes inside secondary, such as the search
 $color-secondary-box-bg: #46494A;
+$color-secondary-box-bg-dark: #3C3F40;
 
 $color-secondary-text: #E7EBEC;
-$color-secondary-text-dim: #BEC6C8;
+$color-secondary-text-dim: #B5C0C3;
 
 
 // FONT
 // ----------------------------
 $font-stack: 'Open Sans', sans-serif;
-$font-header-stack: 'Fredoka One', 'Century Gothic', sans-serif;
+$font-header-stack: 'Fredoka One', 'Impact', sans-serif;
 
-$font-large: 26px;
-$font-medium: 22px;
+$font-xlarge: 26px;
+$font-large: 23px;
+$font-medium: 20px;
 $font-base: 18px;
 $font-small: 14px;
 $font-xsmall: 12px;
@@ -45,11 +49,16 @@ $font-logo-small: 48px;
 
 // GENERAL LAYOUT
 // ----------------------------
+$speed: 0.3s;
+$speed-slow: 0.5s;
+
 $border-radius: 5px;
 $border-size: 1px;
 
 $margin: 20px;
+$margin-min: 5px;
 $padding: 20px;
+$padding-min: 5px;
 
 $breakpoints: (
 	xsmall:	570px,

@@ -1,0 +1,33 @@
+.widgets {
+	padding: $padding;
+
+	.card-block,
+	.form-control {
+		padding: 0.5rem;
+	}
+
+	.ad { margin: auto; }
+}
+
+.widget {
+	margin-bottom: $margin;
+
+	> h2 {
+		display: flex;
+		align-items: center;
+		margin-bottom: $margin / 4;
+	}
+
+	.fa:first-child {
+		margin-right: 5px;
+		color: $color-accent;
+	}
+
+	.fa:nth-child(2) {
+		@include font-size(17px);
+		flex: auto;
+		color: $color-primary-text-dim;
+		text-align: right;
+		cursor: pointer;
+	}
+}

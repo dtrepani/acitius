@@ -111,7 +111,7 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $blue !default;
+$brand-primary:             $color-accent !default;
 $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
@@ -218,10 +218,7 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
+	xl: 1440px
 ) !default;
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
@@ -707,14 +704,14 @@ $state-danger-border:            darken($state-danger-bg, 5%) !default;
 
 // Cards
 
-$card-spacer-x:            1.25rem !default;
+$card-spacer-x:            1rem !default;
 $card-spacer-y:            .75rem !default;
 $card-border-width:        1px !default;
 $card-border-radius:       $border-radius !default;
-$card-border-color:        rgba($black,.125) !default;
+$card-border-color:        $color-primary-border !default;
 $card-border-radius-inner: calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg:              $gray-lightest !default;
-$card-bg:                  $white !default;
+$card-bg:                  $color-primary-box-bg !default;
 
 $card-link-hover-color:    $white !default;
 

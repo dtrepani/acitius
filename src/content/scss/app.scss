@@ -1,4 +1,6 @@
 @import 'base/variables';
+@import 'vendor/bootstrap/bootstrap';
+
 @import 'base/functions';
 @import 'base/mixins';
 @import 'base/extends';
@@ -8,7 +10,11 @@
 @import 'layout/header';
 @import 'layout/nav';
 @import 'layout/content';
-@import 'layout/widgets';
 @import 'layout/footer';
 
 @import 'modules/ads';
+@import 'modules/scrollbar';
+
+@import 'widgets/widgets';
+@import 'widgets/chat';
+@import 'widgets/notes';

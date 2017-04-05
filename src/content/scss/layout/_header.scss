@@ -10,6 +10,7 @@
 	background: $color-secondary-border;
 	border: $avatar-border solid $color-secondary-border;
 	border-radius: 50%;
+	transition: border-color $speed;
 
 	img {
 		position: absolute;
@@ -32,17 +33,34 @@
 		font-family: $font-header-stack;
 		text-align: center;
 	}
+
+	a {
+		color: $color-secondary-text;
+		&:focus, &:hover { color: $color-accent; text-decoration: none; }
+	}
 }
 
 .header {
-	@include font-size(20px);
+	@include font-size($font-medium);
 	height: 55px;
-	padding: 0 $margin 5px;
 	border-bottom: $border-size solid $color-secondary-border;
 
 	.fa {
-		@include font-size($font-medium);
+		@include font-size($font-large);
 		cursor: pointer;
+		transition: color $speed;
+	}
+
+	div:focus > .fa, div:hover > .fa { color: $color-accent; }
+}
+
+.logo a {
+	@extend %sweep-up-animation;
+
+	&:hover {
+		@extend %sweep-up-animation-hover;
+		color: unset;
+		text-decoration: none;
 	}
 }
 
@@ -59,7 +77,7 @@
 
 	input {
 		@include font-size($font-base);
-		width: 240px;
+		width: 230px;
 		height: 30px;
 		padding: 5px 40px 5px 10px;
 		margin-left: $margin;
@@ -72,7 +90,7 @@
 	button {
 		position: absolute;
 		top: 3px;
-		left: 215px;
+		left: 205px;
 		color: $color-secondary-text;
 		background: none;
 		border: 0;
@@ -82,19 +100,29 @@
 .user-container {
 	justify-content: flex-end;
 
-	> div:not(.user),
-	> table {
-		margin-right: $margin;
+	> div {
+		@extend %sweep-up-animation;
+		height: 100%;
+
+		&:focus, &:hover {
+			@extend %sweep-up-animation-hover;
+
+			a {
+				color: $color-accent !important;
+				transition: color $speed;
+			}
+		}
 	}
 
-	> div:not(.user) {
+	> div:not(.user), > table { margin-right: $margin; }
+
+	> .icon {
 		position: relative;
 		width: 45px;
-		height: 45px;
 		text-align: center;
 		cursor: pointer;
 
-		.fa { @include font-size($font-large); }
+		.fa { @include font-size($font-xlarge); }
 
 		.badge {
 			@include font-size($font-xsmall);
@@ -106,13 +134,22 @@
 }
 
 .user {
+	position: relative;
 	font-weight: bold;
 	cursor: pointer;
 
 	.fa {
 		margin-right: 0;
-		color: $color-secondary-text-dim;
+		color: $color-secondary-text-dim !important;
 	}
 
-	.username { margin: auto 5px; }
+	.username {
+		margin: auto 5px;
+		transition: color $speed;
+	}
+
+	&:focus, &:hover {
+		.avatar { border-color: $color-secondary-text; }
+		.username { color: $color-accent; }
+	}
 }
