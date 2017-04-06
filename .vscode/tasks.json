@@ -2,11 +2,20 @@
 	// See https://go.microsoft.com/fwlink/?LinkId=733558
 	// for the documentation about the tasks.json format
 	"version": "0.1.0",
-	"command": "gulp",
-	"isShellCommand": true,
 	"tasks": [
 		{
-			"taskName": "default",
+			"command": "${workspaceRoot}/node_modules/.bin/webpack-dev-server",
+			"taskName": "webpack dev build",
+			"isBuildCommand": true,
+			"isShellCommand": true,
+			"isBackground": true,
+			"showOutput": "always",
+			"args": [ "-d" ]
+		},
+		{
+			"command": "gulp",
+			"taskName": "gulp default",
+			"isShellCommand": true,
 			"isBuildCommand": true,
 			"isBackground": true,
 			"showOutput": "always"

@@ -56,7 +56,7 @@
 
 .header-banner {
 	height: 150px;
-	background: url('/public/images/nighttime.jpg') repeat;
+	background: url('/images/nighttime.jpg') repeat;
 }
 
 .logo a {
@@ -70,8 +70,8 @@
 }
 
 .logo-container,
-.user-container,
-.user-container > div {
+.user-info-container,
+.user-info-container > div {
 	display: flex;
 	align-items: center;
 	flex-direction: row;
@@ -107,7 +107,7 @@
 	margin-right: 20px;
 }
 
-.user-container {
+.user-info-container {
 	justify-content: flex-end;
 
 	> div {

@@ -1,26 +1,31 @@
+const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
-const buildDir = path.resolve(__dirname, 'public');
+const distDir = path.resolve(__dirname, 'dist');
 const srcDir = path.resolve(__dirname, 'src');
-const environment = process.env.NODE_ENV || 'development';
 
+const environment = process.env.NODE_ENV || 'development';
 const extractSass = new ExtractTextPlugin({ filename: 'style.css' });
 
 module.exports = {
 	entry: [`${srcDir}/js/app.jsx`, `${srcDir}/scss/app.scss`],
 	output: {
-		path: buildDir,
+		path: distDir,
 		filename: 'bundle.js'
 	},
 	devtool: 'source-map',
+	devServer: {
+		contentBase: distDir,
+		compress: true
+	},
 	module: {
 		rules: [
 			{
 				test: /\.jsx?$/,
 				include: srcDir,
-				use: 'babel-loader'
+				loader: 'babel-loader'
 			},
 			{
 				test: /\.scss$/,
@@ -29,6 +34,10 @@ module.exports = {
 					use: [
 						{
 							loader: 'css-loader',
+							options: { sourceMap: true }
+						},
+						{
+							loader: 'postcss-loader',
 							options: { sourceMap: true }
 						},
 						{
@@ -46,7 +55,9 @@ module.exports = {
 		]
 	},
 	plugins: [
+		autoprefixer,
 		extractSass,
 		new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify(environment) } })
-	]
+	],
+	resolve: { extensions: ['.js', '.jsx'] }
 };
