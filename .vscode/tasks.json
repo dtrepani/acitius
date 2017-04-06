@@ -5,20 +5,12 @@
 	"tasks": [
 		{
 			"command": "${workspaceRoot}/node_modules/.bin/webpack-dev-server",
-			"taskName": "webpack dev build",
+			"taskName": "dev build",
 			"isBuildCommand": true,
 			"isShellCommand": true,
 			"isBackground": true,
 			"showOutput": "always",
-			"args": [ "-d" ]
-		},
-		{
-			"command": "gulp",
-			"taskName": "gulp default",
-			"isShellCommand": true,
-			"isBuildCommand": true,
-			"isBackground": true,
-			"showOutput": "always"
+			"args": [ "-d", "--env=development" ]
 		}
 	]
 }
