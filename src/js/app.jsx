@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './header/header.jsx';
-import Nav from './nav/nav.jsx';
-import Content from './content/content.jsx';
-import Widgets from './widgets/widgets.jsx';
-import Footer from './footer/footer.jsx';
+import Header from './header/header';
+import Nav from './nav/nav';
+import Content from './content/content';
+import Widgets from './widgets/widgets';
+import Footer from './footer/footer';
 
 ReactDOM.render(
 	(

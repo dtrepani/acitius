@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definition": "List of links",
+    "id": "/src/data/-link-items.json",
+    "items": {
+        "id": "/items",
+        "properties": {
+            "href": {
+                "id": "/items/properties/href",
+                "type": "string"
+            },
+            "name": {
+                "id": "/items/properties/name",
+                "type": "string"
+            }
+        },
+		"required": [ "name" ],
+        "type": "object"
+    },
+    "type": "array"
+}
+

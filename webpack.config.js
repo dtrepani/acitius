@@ -44,7 +44,7 @@ module.exports = {
 							loader: 'sass-loader',
 							options: {
 								sourceMap: true,
-								data: `$env: ${process.env.NODE_ENV};`
+								data: `$env: ${environment};`
 							}
 						}
 					],
@@ -57,7 +57,11 @@ module.exports = {
 	plugins: [
 		autoprefixer,
 		extractSass,
-		new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify(environment) } })
+		new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify(environment) } }),
+		new webpack.optimize.UglifyJsPlugin({ dead_code: true }) // eslint-disable-line
 	],
-	resolve: { extensions: ['.js', '.jsx'] }
+	resolve: {
+		extensions: ['.js', '.jsx', '.json'],
+		modules: ['node_modules', path.resolve(__dirname, 'src')]
+	}
 };
