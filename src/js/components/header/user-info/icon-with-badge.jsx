@@ -16,4 +16,4 @@ HeaderIconWithBadge.propTypes = {
 	icon: React.PropTypes.string.isRequired
 };
 
-module.exports = HeaderIconWithBadge;
+export default HeaderIconWithBadge;

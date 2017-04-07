@@ -12,7 +12,7 @@ class Widget extends React.Component {
 					{this.props.name}
 					<i className="fa fa-fw fa-thumb-tack" aria-hidden="true"></i>
 				</h2>
-				{this.props.widget}
+				{this.props.children}
 			</div>
 		);
 	}
@@ -21,7 +21,7 @@ class Widget extends React.Component {
 Widget.propTypes = {
 	name: React.PropTypes.string.isRequired,
 	icon: React.PropTypes.string.isRequired,
-	widget: React.PropTypes.element.isRequired
+	children: React.PropTypes.element.isRequired
 };
 
-module.exports = Widget;
+export default Widget;

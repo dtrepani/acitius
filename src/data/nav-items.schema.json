@@ -13,6 +13,11 @@
 				"id": "/properties/admin",
 				"type": "boolean"
 			},
+			"classes": {
+				"description": "Any additional classes to add to the top-level element.",
+				"id": "/items/properties/icon",
+				"type": "string"
+			},
 			"icon": {
 				"description": "Icon names are available from: http://fontawesome.io/icons/",
 				"id": "/items/properties/icon",

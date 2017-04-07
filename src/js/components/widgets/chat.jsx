@@ -1,6 +1,6 @@
 import React from 'react';
 
-module.exports = class ChatWidget extends React.Component {
+export default class ChatWidget extends React.Component {
 	render() {
 		return (
 			<div className="card">
@@ -86,4 +86,4 @@ module.exports = class ChatWidget extends React.Component {
 			</div>
 		);
 	}
-};
+}

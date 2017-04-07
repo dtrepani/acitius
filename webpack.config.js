@@ -18,7 +18,8 @@ module.exports = {
 	devtool: 'source-map',
 	devServer: {
 		contentBase: distDir,
-		compress: true
+		compress: true,
+		historyApiFallback: true
 	},
 	module: {
 		rules: [
@@ -58,6 +59,8 @@ module.exports = {
 		autoprefixer,
 		extractSass,
 		new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify(environment) } }),
+		new webpack.optimize.DedupePlugin(),
+		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.optimize.UglifyJsPlugin({ dead_code: true }) // eslint-disable-line
 	],
 	resolve: {

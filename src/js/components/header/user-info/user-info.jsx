@@ -3,7 +3,7 @@ import HeaderCurrency from './currency';
 import HeaderIconWithBadge from './icon-with-badge';
 import HeaderUser from './user';
 
-module.exports = class HeaderUserInfo extends React.Component {
+export default class HeaderUserInfo extends React.Component {
 	render() {
 		return (
 			<div className="user-info-container col-md-7 col">
@@ -14,4 +14,4 @@ module.exports = class HeaderUserInfo extends React.Component {
 			</div>
 		);
 	}
-};
+}

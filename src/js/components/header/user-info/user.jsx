@@ -1,6 +1,6 @@
 import React from 'react';
 
-module.exports = class HeaderUser extends React.Component {
+export default class HeaderUser extends React.Component {
 	render() {
 		return (
 			<div className="user">
@@ -12,4 +12,4 @@ module.exports = class HeaderUser extends React.Component {
 			</div>
 		);
 	}
-};
+}

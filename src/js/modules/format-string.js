@@ -1,4 +1,4 @@
-module.exports = class FormatString {
+export default class FormatString {
 	static spacesToDashes(str) {
 		return str.replace(/ /g, '-').toLowerCase();
 	}
@@ -6,4 +6,4 @@ module.exports = class FormatString {
 	static removeSpaces(str) {
 		return str.replace(/ /g, '').toLowerCase();
 	}
-};
+}

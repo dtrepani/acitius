@@ -1,8 +1,8 @@
 import React from 'react';
-import ListLinkItem from 'js/modules/list-link-item';
+import ListItemLink from 'js/components/modules/list-item-link';
 import FooterNavItems from 'data/footer-link-items';
 
-module.exports = class Footer extends React.Component {
+export default class Footer extends React.PureComponent {
 	render() {
 		return (
 			<footer>
@@ -13,7 +13,7 @@ module.exports = class Footer extends React.Component {
 						<ul className="nav justify-content-center">
 							{
 								FooterNavItems.map((item, index) =>
-									<ListLinkItem
+									<ListItemLink
 										key={index}
 										name={item.name}
 										liClass="nav-item"
@@ -28,4 +28,4 @@ module.exports = class Footer extends React.Component {
 			</footer>
 		);
 	}
-};
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-module.exports = class HeaderCurrency extends React.Component {
+export default class HeaderCurrency extends React.Component {
 	render() {
 		return (
 			<div className="curreny-container">
@@ -19,4 +19,4 @@ module.exports = class HeaderCurrency extends React.Component {
 			</div>
 		);
 	}
-};
+}

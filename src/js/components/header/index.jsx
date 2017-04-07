@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderBar from './header-bar';
 
-module.exports = class Header extends React.Component {
+export default class Header extends React.Component {
 	render() {
 		return (
 			<header>
@@ -10,4 +10,4 @@ module.exports = class Header extends React.Component {
 			</header>
 		);
 	}
-};
+}

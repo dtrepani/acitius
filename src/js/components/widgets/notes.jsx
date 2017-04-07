@@ -1,6 +1,6 @@
 import React from 'react';
 
-module.exports = class NotesWidget extends React.Component {
+export default class NotesWidget extends React.Component {
 	render() {
 		return (
 			<div className="form-group notes">
@@ -8,4 +8,4 @@ module.exports = class NotesWidget extends React.Component {
 			</div>
 		);
 	}
-};
+}

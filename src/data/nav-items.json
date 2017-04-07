@@ -75,6 +75,6 @@
 	{
 		"name": "Widgets",
 		"icon": "fa-cogs",
-		"additionalClasses": "hidden-lg-up"
+		"classes": "hidden-lg-up"
 	}
 ]

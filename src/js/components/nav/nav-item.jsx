@@ -1,24 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import FormatString from 'js/modules/format-string';
-import ListLinkItem from 'js/modules/list-link-item';
+import SubNav from './sub-nav';
 
 class NavItem extends React.Component {
-	_generateDropdown() {
+	_renderDropdown() {
 		if(!this._hasSubNav()) return null;
 		return <i className="fa fa-fw fa-angle-right" aria-hidden="true"></i>;
-	}
-
-	_generateSubNav(subName, nameWithDashes) {
-		if(!this._hasSubNav()) return null;
-
-		return (
-			<ul id={subName}
-					className="card-block collapse"
-					role="tabpanel"
-					aria-labelledby={nameWithDashes}>
-				{ this.props.subNav.map((item, index) => <ListLinkItem key={index} name={item} />) }
-			</ul>
-		);
 	}
 
 	_hasSubNav() {
@@ -29,41 +17,49 @@ class NavItem extends React.Component {
 		const nameWithDashes = FormatString.spacesToDashes(this.props.name);
 		const subName = `sub-${nameWithDashes}`;
 		const href = this._hasSubNav() ? `#${subName}` : nameWithDashes;
+		const hasSubNav = (this.props.subNav.length > 0);
+		const additionalProps = (
+			hasSubNav
+			? {
+				'aria-controls': subName,
+				'aria-expanded': 'false',
+				'data-parent': '#accordion',
+				'data-toggle': 'collapse'
+			}
+			: {}
+		);
 
 		return (
-			<div className={`card ${this.props.additionalClasses}`}>
+			<div className={`card ${this.props.classes}`}>
 				<div className="card-header" role="tab">
-					<a
-						aria-controls={subName}
-						aria-expanded="false"
-						data-parent="#accordion"
-						data-toggle="collapse"
-						href={href}
+					<Link
+						to={href}
 						id={nameWithDashes}
-						title={this.props.name}>
+						title={this.props.name}
+						{...additionalProps}>
 						<i className={`fa fa-fw ${this.props.icon}`} aria-hidden="true"></i>
 						{this.props.name}
-						{this._generateDropdown()}
-					</a>
+						{hasSubNav && <i className="fa fa-fw fa-angle-right" aria-hidden="true"></i>}
+					</Link>
 				</div>
-				{this._generateSubNav(subName, nameWithDashes)}
+				{hasSubNav && <SubNav name={subName} labelledBy={nameWithDashes} subNav={this.props.subNav} />}
 			</div>
 		);
 	}
 }
 
+NavItem.defaultProps = {
+	classes: '',
+	admin: false,
+	subNav: []
+};
+
 NavItem.propTypes = {
-	additionalClasses: React.PropTypes.string,
+	classes: React.PropTypes.string,
 	admin: React.PropTypes.bool,
 	name: React.PropTypes.string.isRequired,
 	icon: React.PropTypes.string.isRequired,
 	subNav: React.PropTypes.array
 };
 
-NavItem.defaultProps = {
-	additionalClasses: '',
-	admin: false,
-	subNav: []
-};
-
-module.exports = NavItem;
+export default NavItem;
