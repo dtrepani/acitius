@@ -10,7 +10,7 @@ const environment = process.env.NODE_ENV || 'development';
 const extractSass = new ExtractTextPlugin({ filename: 'style.css' });
 
 module.exports = {
-	entry: [`${srcDir}/js/app.jsx`, `${srcDir}/scss/app.scss`],
+	entry: ['babel-polyfill', `${srcDir}/js/app.jsx`, `${srcDir}/scss/app.scss`],
 	output: {
 		path: distDir,
 		filename: 'bundle.js'
@@ -59,8 +59,7 @@ module.exports = {
 		autoprefixer,
 		extractSass,
 		new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify(environment) } }),
-		new webpack.optimize.DedupePlugin(),
-		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.optimize.OccurrenceOrderPlugin(),
 		new webpack.optimize.UglifyJsPlugin({ dead_code: true }) // eslint-disable-line
 	],
 	resolve: {
