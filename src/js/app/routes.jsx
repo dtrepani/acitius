@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Layout from 'js/components/layout';
-import Home from 'js/routes/home';
-import News from 'js/routes/news';
-import NotFound from 'js/routes/not-found';
+import Layout from './layout';
+import Home from 'js/home';
+import News from 'js/news';
+import NotFound from 'js/not-found';
 
 export default class Routes extends React.Component {
 	render() {

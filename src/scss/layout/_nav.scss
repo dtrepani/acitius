@@ -8,14 +8,20 @@ $color-games: #F0C063;
 $color-staff: #789FBD;
 $color-widgets: $color-accent;
 
+.nav-closed {
+	width: 40px;
+}
+
 .main-nav {
-	> * { margin: $margin; }
+	overflow-x: hidden;
 
 	.card {
 		margin: 0;
 		background: none;
 		border: 0;
 	}
+
+	> * { margin: $margin; }
 }
 
 .main-nav .card-block {

@@ -1,5 +1,5 @@
 import React from 'react';
-import ListItemLink from 'js/components/modules/list-item-link';
+import ListItemLink from 'js/modules/list-item-link';
 
 class SubNav extends React.Component {
 	render() {

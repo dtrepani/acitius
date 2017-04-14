@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './header';
-import Nav from './nav';
+import Nav from './nav/components';
 import Content from './content';
 import Widgets from './widgets';
 import Footer from './footer';

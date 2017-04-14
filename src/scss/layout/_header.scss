@@ -2,7 +2,7 @@
 	$avatar-border: 2px;
 	$avatar-size: 30px;
 	$avatar-size-with-border: $avatar-size + $avatar-border * 2;
-
+	
 	position: relative;
 	width: $avatar-size-with-border;
 	height: $avatar-size-with-border;
@@ -50,7 +50,8 @@
 		cursor: pointer;
 		transition: color $speed;
 	}
-
+	
+	> .row { height: 100%; }
 	div:focus > .fa, div:hover > .fa { color: $color-accent; }
 }
 
@@ -102,13 +103,21 @@
 	}
 }
 
-.toggle-nav .fa {
-	@include font-size(36px);
-	margin-right: 20px;
+.toggle-nav {
+	display: flex;
+	align-items: center;
+	height: 100%;
+
+	.fa {
+		@include font-size(36px);
+		margin-right: 20px;
+	}
 }
 
 .user-info-container {
+	height: 100%;
 	justify-content: flex-end;
+	align-items: center;
 
 	> div {
 		@extend %sweep-up-animation;
@@ -163,3 +172,5 @@
 		.username { color: $color-accent; }
 	}
 }
+
+.utility-container { height: 100%; }

@@ -1,5 +1,5 @@
 import React from 'react';
-import ListItemLink from 'js/components/modules/list-item-link';
+import ListItemLink from 'js/modules/list-item-link';
 import FooterNavItems from 'data/footer-link-items';
 
 export default class Footer extends React.PureComponent {
