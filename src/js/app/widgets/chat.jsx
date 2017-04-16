@@ -3,8 +3,8 @@ import React from 'react';
 export default class ChatWidget extends React.Component {
 	render() {
 		return (
-			<div className="card">
-				<div className="card-block chat scrollbar-container">
+			<div className="ui card">
+				<div className="chat scrollbar-container">
 					<div className="chat-history scrollbar">
 						<div className="chat-msg">
 							<span className="chat-time">15:00 </span>
@@ -76,12 +76,10 @@ export default class ChatWidget extends React.Component {
 						</div>
 					</div>
 
-					<form className="chat-send">
+					<div className="chat-send ui large icon input">
 						<input type="text" placeholder="Message" />
-						<button type="submit">
-							<i className="fa fa-fw fa-send-o" aria-hidden="true"></i>
-						</button>
-					</form>
+						<i className="send outline link icon"></i>
+					</div>
 				</div>
 			</div>
 		);

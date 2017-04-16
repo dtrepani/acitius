@@ -10,7 +10,7 @@ class Layout extends React.Component {
 		return (
 			<div>
 				<Header />
-				<div className="main-container container py-md-4">
+				<div className="main-container ui padded stretched grid">
 					<div className="row">
 						<Nav />
 						<Content>

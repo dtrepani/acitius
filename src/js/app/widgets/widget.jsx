@@ -8,9 +8,9 @@ class Widget extends React.Component {
 		return (
 			<div className={`widget widget-${name}`}>
 				<h2>
-					<i className={`fa fa-fw ${this.props.icon}`} aria-hidden="true"></i>
+					<i className={`${this.props.icon} icon`} aria-hidden="true"></i>
 					{this.props.name}
-					<i className="fa fa-fw fa-thumb-tack" aria-hidden="true"></i>
+					<i className="pin icon"></i>
 				</h2>
 				{this.props.children}
 			</div>

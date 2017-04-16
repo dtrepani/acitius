@@ -18,25 +18,27 @@ import NavItems from 'data/nav-items';
 	}
 }*/
 
-let Nav = ({ isClosed }) => {
+const Nav = () => {
 	return (
-		<nav
-			className={`main-nav col-auto mr-md-4 ml-md-4 ${isClosed ? 'nav-closed' : ''}`}
-			id="accordion"
-			aria-multiselectable="true"
+		<div
+			id="main-nav-container"
+			className="five wide tablet four wide computer column"
 		>
-			{ NavItems.map((item, index) => <NavItem key={index} {...item} />) }
-			<div className="ad ad-small-square"></div>
-		</nav>
+			<div className="ui segment">
+				<div className="ui sticky sides">
+					<nav className="main-nav">
+						<div className="ui fluid accordion">
+							{ NavItems.map((item, index) => <NavItem key={index} {...item} />) }
+						</div>
+
+						<div
+							className="ui centered small square test ad"
+							data-text="Small Square"></div>
+					</nav>
+				</div>
+			</div>
+		</div>
 	);
 };
-
-Nav.propTypes = { isClosed: React.PropTypes.bool.isRequired };
-
-const mapStateToProps = (state = { isClosed: false }) => {
-	return { isClosed: state.isClosed };
-};
-
-Nav = connect(mapStateToProps)(Nav);
 
 export default Nav;

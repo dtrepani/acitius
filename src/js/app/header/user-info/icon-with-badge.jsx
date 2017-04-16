@@ -3,9 +3,9 @@ import React from 'react';
 class HeaderIconWithBadge extends React.Component {
 	render() {
 		return (
-			<div className={`icon ${this.props.name}`}>
-				<i className={`fa fa-fw ${this.props.icon}`} aria-hidden="true"></i>
-				<span className="badge badge-pill badge-primary">23</span>
+			<div className={`icon-badge-container ${this.props.name}`}>
+				<i className={`${this.props.icon} icon`}></i>
+				<div className="floating ui primary label">23</div>
 			</div>
 		);
 	}

@@ -1,20 +1,13 @@
 // For items that span multiple sections (such as the bgs for nav, content, and widgets).
 
-main,
-.main-nav,
-.widgets {
-	background: $color-primary-bg;
-	border: $border-size solid $color-primary-border;
-	border-radius: $border-radius;
-}
-
-.main-nav,
-.widgets {
-	width: 240px;
-}
-
 header,
+.header.row,
 footer {
 	color: $color-secondary-text;
 	background: $color-secondary-bg;
+}
+
+#main-nav-container .ui.sticky,
+#widgets-container .ui.sticky {
+	z-index: 799;
 }

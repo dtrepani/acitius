@@ -4,45 +4,37 @@ import FormatString from 'js/modules/format-string';
 import SubNav from './sub-nav';
 
 class NavItem extends React.Component {
-	_renderDropdown() {
-		if(!this._hasSubNav()) return null;
-		return <i className="fa fa-fw fa-angle-right" aria-hidden="true"></i>;
-	}
-
-	_hasSubNav() {
-		return (this.props.subNav.length > 0);
+	_onLinkClick(e) {
+		e.preventDefault();
+		// TODO: fix hack
+		setTimeout(() => {
+			$('#main-nav-container .ui.sticky').sticky('refresh');
+		}, 300);
 	}
 
 	render() {
 		const nameWithDashes = FormatString.spacesToDashes(this.props.name);
 		const subName = `sub-${nameWithDashes}`;
-		const href = this._hasSubNav() ? `#${subName}` : nameWithDashes;
 		const hasSubNav = (this.props.subNav.length > 0);
-		const additionalProps = (
-			hasSubNav
-			? {
-				'aria-controls': subName,
-				'aria-expanded': 'false',
-				'data-parent': '#accordion',
-				'data-toggle': 'collapse'
-			}
-			: {}
-		);
 
 		return (
-			<div className={`card ${this.props.classes}`}>
-				<div className="card-header" role="tab">
-					<Link
-						to={href}
-						id={nameWithDashes}
-						title={this.props.name}
-						{...additionalProps}>
-						<i className={`fa fa-fw ${this.props.icon}`} aria-hidden="true"></i>
-						{this.props.name}
-						{hasSubNav && <i className="fa fa-fw fa-angle-right" aria-hidden="true"></i>}
-					</Link>
-				</div>
-				{hasSubNav && <SubNav name={subName} labelledBy={nameWithDashes} subNav={this.props.subNav} />}
+			<div className={`item ${this.props.classes}`}>
+				<Link
+					className="title"
+					to={hasSubNav ? '#' : nameWithDashes}
+					id={nameWithDashes}
+					title={this.props.name}
+					onClick={this._onLinkClick}
+				>
+					<i className={`${this.props.icon} icon`}></i>
+					{this.props.name}
+					{hasSubNav && (
+						<div className="subnav indicator">
+							<i className="subnav angle right icon"></i>
+						</div>
+					)}
+				</Link>
+				{hasSubNav && <SubNav name={subName} subNav={this.props.subNav} />}
 			</div>
 		);
 	}

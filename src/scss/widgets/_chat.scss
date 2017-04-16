@@ -22,33 +22,9 @@ $chat-msg-spacing: 6px;
 	border-bottom: $border-size solid $color-primary-border-dim;
 }
 
-.chat-send {
-	position: relative;
-
-	input {
-		width: 100%;
-		height: 30px;
-		padding: 0 25px 0 5px;
-		color: $color-primary-text-dim;
-		background: $color-primary-bg;
-		border: $border-size solid $color-primary-border;
-		border-radius: $border-radius;
-	}
-
-	button {
-		position: absolute;
-		top: 0;
-		left: 150px;
-		background: none;
-		color: $color-primary-text-dim;
-		
-		&:hover > .fa:first-child { color: $color-accent; }
-
-		.fa:first-child {
-			@include font-size($font-small);
-			color: $color-primary-border-dim;		
-		}
-	}
+.chat-send.ui.input input {
+	@include font-size($font-small);
+	padding: 1em 0.5em;
 }
 
 .chat-time {

@@ -5,7 +5,7 @@ export default class Header extends React.Component {
 	render() {
 		return (
 			<header>
-				<div className="header-banner hidden-md-down"></div>
+				<div className="header-banner ui grid computer only"></div>
 				<HeaderBar />
 			</header>
 		);

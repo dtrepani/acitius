@@ -1,11 +1,11 @@
 [
 	{
 		"name": "News",
-		"icon": "fa-newspaper-o"
+		"icon": "newspaper"
 	},
 	{
 		"name": "My Stuff",
-		"icon": "fa-heart",
+		"icon": "heart",
 		"subNav": [
 			"Inventory",
 			"Quests",
@@ -21,7 +21,7 @@
 	},
 	{
 		"name": "Pets",
-		"icon": "fa-paw",
+		"icon": "paw",
 		"subNav": [
 			"My Pets",
 			"Create Pet",
@@ -33,7 +33,7 @@
 	},
 	{
 		"name": "Shops",
-		"icon": "fa-shopping-cart",
+		"icon": "shop",
 		"subNav": [
 			"My Shop",
 			"Shops",
@@ -46,7 +46,7 @@
 	},
 	{
 		"name": "Community",
-		"icon": "fa-comments",
+		"icon": "comments",
 		"subNav": [
 			"Forums",
 			"Aftermath Power",
@@ -57,7 +57,7 @@
 	},
 	{
 		"name": "World",
-		"icon": "fa-globe",
+		"icon": "globe",
 		"subNav": [
 			"Explore",
 			"Arena"
@@ -65,16 +65,16 @@
 	},
 	{
 		"name": "Games",
-		"icon": "fa-star"
+		"icon": "star"
 	},
 	{
 		"name": "Staff", 
-		"icon" :"fa-id-badge",
+		"icon" :"users",
 		"admin": true
 	},
 	{
 		"name": "Widgets",
-		"icon": "fa-cogs",
+		"icon": "cogs",
 		"classes": "hidden-lg-up"
 	}
 ]

@@ -19,7 +19,7 @@
 				"type": "string"
 			},
 			"icon": {
-				"description": "Icon names are available from: http://fontawesome.io/icons/",
+				"description": "Icon names are available from: https://semantic-ui.com/elements/icon.html",
 				"id": "/items/properties/icon",
 				"type": "string"
 			},

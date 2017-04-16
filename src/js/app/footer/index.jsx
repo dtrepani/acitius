@@ -6,8 +6,8 @@ export default class Footer extends React.PureComponent {
 	render() {
 		return (
 			<footer>
-				<div className="footer container justify-content-center">
-					<div className="ad ad-leaderboard"></div>
+				<div className="footer ui padded grid">
+					<div className="ui centered leaderboard test ad" data-text="Leaderboard"></div>
 
 					<nav className="footer-nav py-2">
 						<ul className="nav justify-content-center">

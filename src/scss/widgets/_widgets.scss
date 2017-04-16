@@ -1,29 +1,28 @@
 .widgets {
-	padding: $padding;
-
-	.card-block,
+	.card,
 	.form-control {
 		padding: 0.5rem;
 	}
 
-	.ad { margin: auto; }
+	> * {
+		margin-bottom: $margin;
+	}
 }
 
-.widget {
-	margin-bottom: $margin;
+#widgets-container { padding-left: 0 !important; }
 
+.widget {
 	> h2 {
 		display: flex;
-		align-items: center;
 		margin-bottom: $margin / 4;
 	}
 
-	.fa:first-child {
+	i:first-child {
 		margin-right: 5px;
 		color: $color-accent;
 	}
 
-	.fa:nth-child(2) {
+	i:nth-child(2) {
 		@include font-size(17px);
 		flex: auto;
 		color: $color-primary-text-dim;

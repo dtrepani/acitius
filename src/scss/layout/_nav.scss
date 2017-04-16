@@ -8,23 +8,13 @@ $color-games: #F0C063;
 $color-staff: #789FBD;
 $color-widgets: $color-accent;
 
-.nav-closed {
-	width: 40px;
-}
-
 .main-nav {
 	overflow-x: hidden;
 
-	.card {
-		margin: 0;
-		background: none;
-		border: 0;
-	}
-
-	> * { margin: $margin; }
+	> * { margin-bottom: $margin !important; }
 }
 
-.main-nav .card-block {
+.main-nav .content {
 	$submenu-padding: 5px;
 
 	padding: $submenu-padding 0;
@@ -55,46 +45,60 @@ $color-widgets: $color-accent;
 	}
 }
 
-.main-nav .card-header {
-	position: relative;
-	padding: $padding $padding ($padding / 4);
-	cursor: pointer;
-	background: none;
-	border: 0;
-
-	&:focus, &:hover {
-		a { @extend %sweep-text-right-animation-hover; }
-		.fa:first-child { transform: scale(1.3); }
-	}
-
-	.fa:first-child {
-		margin-right: 5px;
-		transition: $speed transform ease-out;
-	}
-
-	.fa:nth-child(2) {
-		flex: auto;
-		color: $color-primary-text-dim;
-		text-align: right;
-	}
-}
-
-.main-nav .card-header a {
+.main-nav .ui.accordion .item .title {
 	@extend h2;
-	@include sweep-text-right-animation(0, 34.5px);
+	@include sweep-text-right-animation(23px, 55px);
+	position: relative;
 	display: flex;
 	align-items: center;
 	flex-direction: row;
+	padding: $padding $padding ($padding / 4);
+	line-height: $font-xlarge;
 	color: $color-primary-text;
 	text-decoration: none;
+	cursor: pointer;
+	background: none;
+
+	&:hover, &:focus {
+		@extend %sweep-text-right-animation-hover;
+	}
+
+	&:hover > i { transform: scale(1.3); }
 
 	&::before {
 		@extend h2;
 		background: $color-primary-bg;
 	}
+
+	> i {
+		margin-right: 5px;
+		transition: $speed transform ease-out;
+	}
+
+	.subnav.indicator {
+		flex: auto;
+		color: $color-primary-text-dim;
+		text-align: right;
+	}
+
+	i.subnav {
+		width: auto;
+		margin: 0;
+		transition: transform 0.1s ease, opacity 0.1s ease;
+	}
 }
 
-.fa:first-child {
+.active.title i.subnav {
+	transform: rotate(90deg);
+}
+
+#main-nav-container {
+	padding-right: 0 !important;
+
+	.ui.segment { padding: 0; }
+}
+
+> i {
 	#news & { color: $color-news; }
 	#my-stuff & { color: $color-my-stuff; }
 	#pets & { color: $color-pets; }
@@ -131,7 +135,7 @@ li a::before {
 	#sub-widgets & { color: $color-widgets; }
 }
 
-.main-nav .card-header a {
+.main-nav .title {
 	&#news::before { color: $color-news; }
 	&#my-stuff::before { color: $color-my-stuff; }
 	&#pets::before { color: $color-pets; }
