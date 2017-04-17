@@ -1,10 +1,16 @@
 import React from 'react';
+import { TextArea } from 'semantic-ui-react';
 
 export default class NotesWidget extends React.Component {
 	render() {
 		return (
-			<div className="form-group notes">
-				<textarea className="form-control scrollbar" rows="10"></textarea>
+			<div className="notes">
+				<TextArea
+					className="scrollbar"
+					rows="10"
+					placeholder="Write notes..."
+				>
+				</TextArea>
 			</div>
 		);
 	}

@@ -6,4 +6,16 @@ footer {
 	.ad { margin: auto; }
 }
 
-.footer-nav a { text-decoration: none; }
+.copyright,
+.footer-nav .list {
+	margin: auto;
+}
+
+.footer-nav a {
+	text-decoration: none;
+	color: $color-accent !important;
+
+	&:hover {
+		color: $color-accent-dim !important;
+	}
+}

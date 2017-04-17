@@ -1,9 +1,10 @@
 import React from 'react';
+import { Card, Icon, Input } from 'semantic-ui-react';
 
 export default class ChatWidget extends React.Component {
 	render() {
 		return (
-			<div className="ui card">
+			<Card>
 				<div className="chat scrollbar-container">
 					<div className="chat-history scrollbar">
 						<div className="chat-msg">
@@ -76,12 +77,13 @@ export default class ChatWidget extends React.Component {
 						</div>
 					</div>
 
-					<div className="chat-send ui large icon input">
-						<input type="text" placeholder="Message" />
-						<i className="send outline link icon"></i>
-					</div>
+					<Input
+						className="chat-send"
+						icon={<Icon name="send outline" link />}
+						placeholder="Message"
+					/>
 				</div>
-			</div>
+			</Card>
 		);
 	}
 }

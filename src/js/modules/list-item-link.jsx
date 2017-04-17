@@ -2,7 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import FormatString from 'js/modules/format-string';
 
-class ListItemLink extends React.Component {
+export default class ListItemLink extends React.Component {
+	static propTypes = {
+		name: React.PropTypes.string.isRequired,
+		href: React.PropTypes.string,
+		liClass: React.PropTypes.string,
+		aClass: React.PropTypes.string
+	};
+
+	shouldComponentUpdate() {
+		return false;
+	}
+
 	render() {
 		const href = this.props.href
 			? `/${this.props.href}`
@@ -15,12 +26,3 @@ class ListItemLink extends React.Component {
 		);
 	}
 }
-
-ListItemLink.propTypes = {
-	name: React.PropTypes.string.isRequired,
-	href: React.PropTypes.string,
-	liClass: React.PropTypes.string,
-	aClass: React.PropTypes.string
-};
-
-export default ListItemLink;

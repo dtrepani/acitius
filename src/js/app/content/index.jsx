@@ -1,18 +1,20 @@
 import React from 'react';
+import { Grid } from 'semantic-ui-react';
 
 class Content extends React.Component {
 	render() {
 		return (
-			<div
+			<Grid.Column
 				id="content-column"
-				className="eleven wide tablet eight wide computer column"
+				tablet="eleven"
+				computer="eight"
 			>
 				<main
 					id="content-container"
 					className="ui segment">
 					{this.props.children}
 				</main>
-			</div>
+			</Grid.Column>
 		);
 	}
 }

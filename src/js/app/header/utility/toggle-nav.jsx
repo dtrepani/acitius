@@ -1,13 +1,18 @@
 import React from 'react';
+import { Icon } from 'semantic-ui-react';
 
-function ToggleNav({ onToggleClick }) {
-	return (
-		<div className="toggle-nav" onClick={onToggleClick}>
-			<i className="content link icon"></i>
-		</div>
-	);
+export default class ToggleNav extends React.Component {
+	static propTypes = { onToggleClick: React.PropTypes.func.isRequired };
+
+	shouldComponentUpdate() {
+		return false;
+	}
+
+	render() {
+		return (
+			<div className="toggle-nav" onClick={this.props.onToggleClick}>
+				<Icon name="content" link />
+			</div>
+		);
+	}
 }
-
-ToggleNav.propTypes = { onToggleClick: React.PropTypes.func.isRequired };
-
-export default ToggleNav;

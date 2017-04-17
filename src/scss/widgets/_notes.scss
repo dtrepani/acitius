@@ -1,5 +1,7 @@
 .notes textarea {
 	@include font-size($font-xsmall);
+	width: 100%;
+	padding: 0.5em;
 	background: $color-primary-box-bg !important;
 	border: $border-size solid $color-primary-border;
 }

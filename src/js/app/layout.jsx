@@ -4,27 +4,26 @@ import Nav from './nav/components';
 import Content from './content';
 import Widgets from './widgets';
 import Footer from './footer';
+import { Grid } from 'semantic-ui-react';
 
-class Layout extends React.Component {
+export default class Layout extends React.Component {
+	static propTypes = { children: React.PropTypes.object.isRequired };
+
 	render() {
 		return (
 			<div>
 				<Header />
-				<div className="main-container ui padded stretched grid">
-					<div className="row">
+				<Grid className="main-container" padded centered stretched>
+					<Grid.Row>
 						<Nav />
 						<Content>
 							{this.props.children}
 						</Content>
 						<Widgets />
-					</div>
-				</div>
+					</Grid.Row>
+				</Grid>
 				<Footer />
 			</div>
 		);
 	}
 }
-
-Layout.propTypes = { children: React.PropTypes.object.isRequired };
-
-export default Layout;

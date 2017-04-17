@@ -1,5 +1,6 @@
 {
     "extends": ["plugin:react/recommended", "eslint:recommended"],
+    "parser": "babel-eslint",
     "env": {
         "es6": true,
         "node": true,
@@ -7,13 +8,12 @@
         "browser": true
     },
     "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
         "ecmaFeatures": {
             "impliedStrict": true,
+            "modules": true,
             "jsx": true
         },
-        "plugins": ["react"]
+        "plugins": ["react", "lodash"]
     },
     "rules": {
         "valid-jsdoc": [

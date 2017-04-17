@@ -26,20 +26,20 @@
 	height: $header-height;
 }
 
-.header.row {
+.header-bar.ui.attached.menu {
 	@include font-size($font-medium);
 	height: $header-height;
-	padding: 0 !important;
+	background: $color-secondary-bg;
+	border: 0;
 	border-bottom: $border-size solid $color-secondary-border;
 	border-radius: 0;
 
-	> .row { height: 100%; }
 	div:focus > i, div:hover > i { color: $color-accent; }
-	.left.menu, .right.menu { align-items: center; }
+	.ui.menu { align-items: center; }
 	.ui.sticky & { z-index: 1010; }
 }
 
-.header.row > i,
+.header-bar > i,
 .user-info-container i {
 	@include font-size($font-large);
 	cursor: pointer;
@@ -53,6 +53,7 @@
 
 .logo a {
 	@extend %sweep-up-animation;
+	margin-right: 20px;
 
 	&:hover {
 		@extend %sweep-up-animation-hover;
@@ -74,6 +75,28 @@
 		@include font-size(36px);
 		margin-right: 20px;
 	}
+}
+
+.ui.menu .user.ui.dropdown .menu {
+	@include font-size($font-small);
+	min-width: 100%;
+	padding: 5px 0;
+	background: $color-secondary-bg;
+	border-top: 0;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+
+	> .item, > .item i {
+		color: $color-secondary-text !important;
+		transition: background 0.2s ease, color 0.2s ease !important;
+
+		&:hover, &:hover i {
+			color: $color-secondary-bg !important;
+			background: $color-accent !important;
+		}
+	}
+
+	> .item { padding: 15px 10px !important; }
 }
 
 .user-info-container {
@@ -115,7 +138,7 @@
 	}
 }
 
-.user {
+.user.ui.dropdown {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -127,13 +150,19 @@
 		color: $color-secondary-text-dim !important;
 	}
 
-	.username {
-		margin: auto 5px;
-		transition: color $speed;
-	}
-
 	&:focus, &:hover {
 		.avatar { border-color: $color-secondary-text; }
 		.username { color: $color-accent; }
+	}
+}
+
+.username-container {
+	display: flex;
+	align-items: center;
+	height: 100%;
+
+	.username {
+		margin: auto 5px;
+		transition: color $speed;
 	}
 }

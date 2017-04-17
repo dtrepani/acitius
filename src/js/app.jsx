@@ -1,15 +1,17 @@
-import { createStore } from 'redux';
+import { configureStore } from './store';
 import { Provider } from 'react-redux';
+import { whyDidYouUpdate } from 'why-did-you-update';
+import Perf from 'react-addons-perf';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import rootReducer from './app/reducers.jsx';
-import Routes from './app/routes';
+import Routes from './routes';
 
-const store = createStore(
-	rootReducer,
-	{ isClosed: false },
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store = configureStore();
+
+if(process.env.NODE_ENV === 'development') {
+	window.Perf = Perf;
+	// whyDidYouUpdate(React);
+}
 
 ReactDOM.render(
 	(

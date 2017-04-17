@@ -1,30 +1,31 @@
 import React from 'react';
-import ListItemLink from 'js/modules/list-item-link';
 import FooterNavItems from 'data/footer-link-items';
+import { Grid, List } from 'semantic-ui-react';
 
 export default class Footer extends React.PureComponent {
 	render() {
 		return (
 			<footer>
-				<div className="footer ui padded grid">
+				<Grid className="footer" padded>
 					<div className="ui centered leaderboard test ad" data-text="Leaderboard"></div>
 
-					<nav className="footer-nav py-2">
-						<ul className="nav justify-content-center">
+					<Grid.Row className="footer-nav">
+						<List horizontal link>
 							{
 								FooterNavItems.map((item, index) =>
-									<ListItemLink
+									<List.Item
+										as="a"
 										key={index}
-										name={item.name}
-										liClass="nav-item"
-										aClass="nav-link" />
+									>
+										{item.name}
+									</List.Item>
 								)
 							}
-						</ul>
-					</nav>
+						</List>
+					</Grid.Row>
 
 					<span className="copyright">© Acitius 2017, All Rights Reserved</span>
-				</div>
+				</Grid>
 			</footer>
 		);
 	}

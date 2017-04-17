@@ -2,14 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import FormatString from 'js/modules/format-string';
 import SubNav from './sub-nav';
+import { Icon, Item } from 'semantic-ui-react';
 
-class NavItem extends React.Component {
+export default class NavItem extends React.Component {
+	static defaultProps = {
+		classes: '',
+		admin: false,
+		subNav: []
+	};
+
+	static propTypes = {
+		classes: React.PropTypes.string,
+		admin: React.PropTypes.bool,
+		name: React.PropTypes.string.isRequired,
+		icon: React.PropTypes.string.isRequired,
+		subNav: React.PropTypes.array
+	};
+
 	_onLinkClick(e) {
-		e.preventDefault();
 		// TODO: fix hack
 		setTimeout(() => {
-			$('#main-nav-container .ui.sticky').sticky('refresh');
+			$('.ui.sticky.sides').sticky('refresh');
 		}, 300);
+	}
+
+	shouldComponentUpdate() {
+		return false;
 	}
 
 	render() {
@@ -18,7 +36,7 @@ class NavItem extends React.Component {
 		const hasSubNav = (this.props.subNav.length > 0);
 
 		return (
-			<div className={`item ${this.props.classes}`}>
+			<Item className={this.props.classes}>
 				<Link
 					className="title"
 					to={hasSubNav ? '#' : nameWithDashes}
@@ -26,32 +44,16 @@ class NavItem extends React.Component {
 					title={this.props.name}
 					onClick={this._onLinkClick}
 				>
-					<i className={`${this.props.icon} icon`}></i>
+					<Icon name={this.props.icon} />
 					{this.props.name}
 					{hasSubNav && (
 						<div className="subnav indicator">
-							<i className="subnav angle right icon"></i>
+							<Icon className="subnav" name="angle right" />
 						</div>
 					)}
 				</Link>
 				{hasSubNav && <SubNav name={subName} subNav={this.props.subNav} />}
-			</div>
+			</Item>
 		);
 	}
 }
-
-NavItem.defaultProps = {
-	classes: '',
-	admin: false,
-	subNav: []
-};
-
-NavItem.propTypes = {
-	classes: React.PropTypes.string,
-	admin: React.PropTypes.bool,
-	name: React.PropTypes.string.isRequired,
-	icon: React.PropTypes.string.isRequired,
-	subNav: React.PropTypes.array
-};
-
-export default NavItem;

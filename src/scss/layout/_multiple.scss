@@ -11,3 +11,7 @@ footer {
 #widgets-container .ui.sticky {
 	z-index: 799;
 }
+
+#main-nav-container, #widgets-container {
+	max-width: 250px;
+}

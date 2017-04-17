@@ -1,11 +1,12 @@
 import React from 'react';
 import HeaderBar from './header-bar';
+import { Grid } from 'semantic-ui-react';
 
 export default class Header extends React.Component {
 	render() {
 		return (
 			<header>
-				<div className="header-banner ui grid computer only"></div>
+				<Grid.Row className="header-banner" only="computer"></Grid.Row>
 				<HeaderBar />
 			</header>
 		);

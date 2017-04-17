@@ -1,5 +1,6 @@
 import React from 'react';
 import FormatString from 'js/modules/format-string';
+import { Icon } from 'semantic-ui-react';
 
 class Widget extends React.Component {
 	render() {
@@ -8,9 +9,9 @@ class Widget extends React.Component {
 		return (
 			<div className={`widget widget-${name}`}>
 				<h2>
-					<i className={`${this.props.icon} icon`} aria-hidden="true"></i>
+					<Icon name={this.props.icon} />
 					{this.props.name}
-					<i className="pin icon"></i>
+					<Icon name="pin" />
 				</h2>
 				{this.props.children}
 			</div>

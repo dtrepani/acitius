@@ -1,14 +1,19 @@
 import React from 'react';
 import ListItemLink from 'js/modules/list-item-link';
+import { Item } from 'semantic-ui-react';
 
 class SubNav extends React.Component {
+	shouldComponentUpdate() {
+		return false;
+	}
+
 	render() {
 		return (
-			<div className="content">
+			<Item.Content>
 				<ul id={this.props.name} className="transition hidden">
 					{ this.props.subNav.map((item, index) => <ListItemLink key={index} name={item} />) }
 				</ul>
-			</div>
+			</Item.Content>
 		);
 	}
 }
