@@ -1,0 +1,51 @@
+// ------------------------
+//   BOOTSTRAP OVERRIDES
+// ------------------------
+
+// Variables
+$brand-primary: $color-accent;
+$card-border-color: $color-primary-border;
+$card-bg: $color-primary-box-bg;
+
+$container-max-widths: (
+  xl: 1440px
+);
+
+// Classes
+.dropdown-menu {
+  display: block !important;
+  transform: scaleY(0);
+  transition: transform .2s ease;
+  transform-origin: center top;
+
+  .dropdown.show & { transform: scaleY(1);   }
+}
+
+.input-group input {
+  transition: border-color $speed;
+
+  // Placeholders must not be grouped to be considered valid by browsers
+  &::-webkit-input-placeholder {
+    color: $color-primary-text-dim;
+    transition: color $speed;
+  }
+
+  &::-moz-placeholder {
+    color: $color-primary-text-dim;
+    transition: color $speed;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color-primary-text-dim;
+    transition: color $speed;
+  }
+
+  &:focus, &:active {
+    &::-webkit-input-placeholder { color: $color-primary-text; }
+    &::-moz-placeholder { color: $color-primary-text; }
+    &:-ms-input-placeholder { color: $color-primary-text; }
+
+    // See global for definition
+    ~ .btn-inside { color: $color-primary-text; }
+  }
+}
