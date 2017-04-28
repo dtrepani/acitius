@@ -1,0 +1,168 @@
+.avatar {
+	background: $color-secondary-border;
+	border: 2px solid $color-secondary-border;
+	transition: border-color $speed;
+}
+
+.currency {
+	@include font-size($font-small);
+	line-height: $font-small;
+
+	td { text-align: right; }
+
+	tr > td:last-child {
+		padding-left: 5px;
+		font-family: $font-header-stack;
+		text-align: center;
+	}
+
+	a {
+		color: $color-secondary-text;
+		&:focus, &:hover { color: $color-accent; text-decoration: none; }
+	}
+}
+
+.header-container {
+	height: $header-height;
+}
+
+.header-bar.ui.attached.menu {
+	@include font-size($font-medium);
+	height: $header-height;
+	background: $color-secondary-bg;
+	border: 0;
+	border-bottom: $border-size solid $color-secondary-border;
+	border-radius: 0;
+
+	div:focus > i, div:hover > i { color: $color-accent; }
+	.ui.menu { align-items: center; }
+	.ui.sticky & { z-index: 1010; }
+}
+
+.header-bar > i,
+.user-info-container i {
+	@include font-size($font-large);
+	cursor: pointer;
+	transition: color $speed;
+}
+
+.header-banner {
+	height: 150px;
+	background: url('/images/nighttime.jpg') repeat;
+}
+
+.logo a {
+	@extend %sweep-up-animation;
+	margin-right: 20px;
+
+	&:hover {
+		@extend %sweep-up-animation-hover;
+		color: unset;
+		text-decoration: none;
+	}
+}
+
+.search-header.ui.search input.prompt {
+	@include font-size($font-small);
+}
+
+.toggle-nav {
+	display: flex;
+	align-items: center;
+	height: 100%;
+
+	i {
+		@include font-size(36px);
+		margin-right: 20px;
+	}
+}
+
+.ui.menu .user.ui.dropdown .menu {
+	@include font-size($font-small);
+	min-width: 100%;
+	padding: 5px 0;
+	background: $color-secondary-bg;
+	border-top: 0;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+
+	> .item, > .item i {
+		color: $color-secondary-text !important;
+		transition: background 0.2s ease, color 0.2s ease !important;
+
+		&:hover, &:hover i {
+			color: $color-secondary-bg !important;
+			background: $color-accent !important;
+		}
+	}
+
+	> .item { padding: 15px 10px !important; }
+}
+
+.user-info-container {
+	> div {
+		@extend %sweep-up-animation;
+		align-items: center;
+		height: 100%;
+
+		&:focus, &:hover {
+			@extend %sweep-up-animation-hover;
+
+			a {
+				color: $color-accent !important;
+				transition: color $speed;
+			}
+		}
+	}
+
+	> div:not(.user), > table {
+		display: flex;
+		margin-right: $margin;
+	}
+
+	> .icon-badge-container {
+		position: relative;
+		width: 45px;
+		text-align: center;
+		cursor: pointer;
+
+		i { @include font-size($font-xlarge); }
+
+		.label {
+			@include font-size($font-xsmall);
+			position: absolute;
+			top: 6px;
+			left: 80%;
+			padding: 0.4em;
+		}
+	}
+}
+
+.user.ui.dropdown {
+	position: relative;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	cursor: pointer;
+
+	i {
+		margin-right: 0;
+		color: $color-secondary-text-dim !important;
+	}
+
+	&:focus, &:hover {
+		.avatar { border-color: $color-secondary-text; }
+		.username { color: $color-accent; }
+	}
+}
+
+.username-container {
+	display: flex;
+	align-items: center;
+	height: 100%;
+
+	.username {
+		margin: auto 5px;
+		transition: color $speed;
+	}
+}

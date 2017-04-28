@@ -1,0 +1,36 @@
+$chat-msg-spacing: 6px;
+
+.chat {
+	@include font-size($font-small);
+	display: flex;
+	flex-direction: column;
+	height: 400px;
+}
+
+.chat-history {
+	flex: auto;
+	margin-bottom: $chat-msg-spacing;
+	overflow-y: auto;
+
+	.chat-msg:first-child { padding-top: 0; }
+	.chat-msg:last-child { border: 0; }
+}
+
+.chat-msg {
+	padding: $chat-msg-spacing 0;
+	word-wrap: break-word;
+	border-bottom: $border-size solid $color-primary-border-dim;
+}
+
+.chat-send.ui.input input {
+	@include font-size($font-small);
+	padding: 1em 0.5em;
+}
+
+.chat-time {
+	width: 40px;
+	max-width: 40px;
+	color: $color-primary-text-dim;
+}
+
+.chat-user { font-weight: bold; }

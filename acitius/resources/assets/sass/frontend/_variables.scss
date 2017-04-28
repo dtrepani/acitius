@@ -1,0 +1,99 @@
+// Body
+$body-bg: #f5f8fa;
+
+// Borders
+$laravel-border-color: darken($body-bg, 10%);
+$list-group-border: $laravel-border-color;
+$navbar-default-border: $laravel-border-color;
+$panel-default-border: $laravel-border-color;
+$panel-inner-border: $laravel-border-color;
+
+// Typography
+$fa-font-path: '~font-awesome/fonts/';
+$font-family-sans-serif: 'Lato', sans-serif;
+//$line-height-base: 1.6;
+$text-color: #636b6f;
+
+// Navbar
+$navbar-default-bg: #fff;
+
+// Panels
+$panel-default-heading-bg: #fff;
+
+// COLORS
+// ----------------------------
+$color-accent: #13C2D7;
+$color-accent-dim: lighten($color-accent, 20%);
+$color-bg: #8DC4D8;
+
+// Primary: Nav, content, and widgets
+$color-primary-bg: #FFF;
+$color-primary-border: darken($color-primary-bg, 10%);
+$color-primary-border-dim: darken($color-primary-bg, 5%);
+
+// Boxes inside primary, such as the chat or sub-nav
+$color-primary-box-bg: #FAFBFB;
+$color-primary-box-bg-dark: #F1F1F1;
+
+$color-primary-text: #40484E;
+$color-primary-text-dim: #B5C0C3;
+
+// Secondary: Header and footer
+$color-secondary-bg: #303131;
+$color-secondary-border: darken($color-secondary-bg, 10%);
+$color-secondary-border-dim: darken($color-secondary-bg, 5%);
+
+// Boxes inside secondary, such as the search
+$color-secondary-box-bg: #46494A;
+$color-secondary-box-bg-dark: #3C3F40;
+
+$color-secondary-text: #E7EBEC;
+$color-secondary-text-dim: #B5C0C3;
+
+// Nav colors
+$color-news: #CEC8A8;
+$color-my-stuff: #DA6464;
+$color-pets: #9981CF;
+$color-shops: #5EADB5;
+$color-community: #90C286;
+$color-world: #52BFC2;
+$color-games: #F0C063;
+$color-staff: #789FBD;
+$color-widgets: $color-accent;
+
+
+// FONT
+// ----------------------------
+$font-stack: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+$font-header-stack: 'Fredoka One', Impact, sans-serif;
+
+$font-xlarge: 26px;
+$font-large: 23px;
+$font-medium: 20px;
+$font-base: 18px;
+$font-small: 14px;
+$font-xsmall: 12px;
+
+$font-logo-large: 92px;
+$font-logo-small: 48px;
+
+
+// LAYOUT
+// ----------------------------
+// Header
+$avatar-size: 40px;
+$header-height: 55px;
+
+// Nav
+$submenu-spacing: 5px;
+
+// General
+$sides-width: 240px;
+
+$speed: .3s;
+$speed-slow: .5s;
+
+$border-radius: 5px;
+$border-size: 1px;
+
+$spacing: 1rem;

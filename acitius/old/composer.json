@@ -1,0 +1,22 @@
+{
+  "name": "acitius/acitius",
+  "description": "Virtual pet website",
+  "minimum-stability": "dev",
+  "prefer-stable" : true,
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Fina",
+      "email": "finapani@gmail.com"
+    }
+  ],
+  "require": {
+    "laravel/laravel": "^5.4"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^2.8",
+    "barryvdh/laravel-ide-helper": "^2.3",
+    "phpunit/phpunit": "^6.1",
+    "phpmd/phpmd": "^2.6"
+  }
+}

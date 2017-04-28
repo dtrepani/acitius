@@ -1,0 +1,148 @@
+$color-news: #CEC8A8;
+$color-my-stuff: #DA6464;
+$color-pets: #9981CF;
+$color-shops: #5EADB5;
+$color-community: #90C286;
+$color-world: #52BFC2;
+$color-games: #F0C063;
+$color-staff: #789FBD;
+$color-widgets: $color-accent;
+
+.main-nav {
+	overflow-x: hidden;
+
+	> * { margin-bottom: $margin !important; }
+}
+
+.main-nav .content {
+	$submenu-padding: 5px;
+
+	padding: $submenu-padding 0;
+	background: $color-primary-box-bg;
+	border-top: $border-size solid $color-primary-border;
+	border-bottom: $border-size solid $color-primary-border;
+
+	li {
+		@extend %sweep-right-animation;
+
+		&:active, &:focus, &:hover {
+			@extend %sweep-right-animation-hover;
+
+			a {
+				@extend %sweep-text-right-animation-hover;
+				&::before { background: $color-primary-box-bg; }
+			}
+		}
+
+		a {
+			@include font-size($font-base);
+			@include sweep-text-right-animation($submenu-padding, 60px);
+			display: block;
+			padding: $submenu-padding 0 $submenu-padding 60px;
+			color: $color-primary-text;
+			text-decoration: none;
+		}
+	}
+}
+
+.main-nav .ui.accordion .item .title {
+	@extend h2;
+	@include sweep-text-right-animation(23px, 55px);
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	padding: $padding $padding ($padding / 4);
+	line-height: $font-xlarge;
+	color: $color-primary-text;
+	text-decoration: none;
+	cursor: pointer;
+	background: none;
+
+	&:hover, &:focus {
+		@extend %sweep-text-right-animation-hover;
+	}
+
+	&:hover > i { transform: scale(1.3); }
+
+	&::before {
+		@extend h2;
+		background: $color-primary-bg;
+	}
+
+	> i {
+		margin-right: 5px;
+		transition: $speed transform ease-out;
+	}
+
+	.subnav.indicator {
+		flex: auto;
+		color: $color-primary-text-dim;
+		text-align: right;
+	}
+
+	i.subnav {
+		width: auto;
+		margin: 0;
+		transition: transform 0.1s ease, opacity 0.1s ease;
+	}
+}
+
+.active.title i.subnav {
+	transform: rotate(90deg);
+}
+
+#main-nav-container {
+	padding-right: 0 !important;
+
+	.ui.segment { padding: 0; }
+}
+
+> i {
+	#news & { color: $color-news; }
+	#my-stuff & { color: $color-my-stuff; }
+	#pets & { color: $color-pets; }
+	#shops & { color: $color-shops; }
+	#community & { color: $color-community; }
+	#world & { color: $color-world; }
+	#games & { color: $color-games; }
+	#staff & { color: $color-staff; }
+	#widgets & { color: $color-widgets; }
+}
+
+li::before {
+	#sub-news & { background: $color-news; }
+	#sub-my-stuff & { background: $color-my-stuff; }
+	#sub-pets & { background: $color-pets; }
+	#sub-shops & { background: $color-shops; }
+	#sub-community & { background: $color-community; }
+	#sub-world & { background: $color-world; }
+	#sub-games & { background: $color-games; }
+	#sub-staff & { background: $color-staff; }
+	#sub-widgets & { background: $color-widgets; }
+}
+
+
+li a::before {
+	#sub-news & { color: $color-news; }
+	#sub-my-stuff & { color: $color-my-stuff; }
+	#sub-pets & { color: $color-pets; }
+	#sub-shops & { color: $color-shops; }
+	#sub-community & { color: $color-community; }
+	#sub-world & { color: $color-world; }
+	#sub-games & { color: $color-games; }
+	#sub-staff & { color: $color-staff; }
+	#sub-widgets & { color: $color-widgets; }
+}
+
+.main-nav .title {
+	&#news::before { color: $color-news; }
+	&#my-stuff::before { color: $color-my-stuff; }
+	&#pets::before { color: $color-pets; }
+	&#shops::before { color: $color-shops; }
+	&#community::before { color: $color-community; }
+	&#world::before { color: $color-world; }
+	&#games::before { color: $color-games; }
+	&#staff::before { color: $color-staff; }
+	&#widgets::before { color: $color-widgets; }
+}

@@ -1,0 +1,83 @@
+{
+  "name": "acitius",
+  "author": "Desiree",
+  "version": "1.0.0",
+  "description": "Website for Acitius",
+  "private": true,
+  "main": "dist/index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finajo/acitius.git"
+  },
+  "homepage": "https://github.com/finajo/acitius#readme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/finajo/acitius/issues"
+  },
+  "scripts": {
+    "build": "webpack -p --progress",
+    "dev-build": "webpack -d --env=development --progress",
+    "watch": "webpack --watch --progress",
+    "dev-server": "webpack-dev-server -d --env=development --progress",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "es2017",
+      "react",
+      "stage-0"
+    ]
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.2",
+    "babel-loader": "^6.4.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.3.2",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.6.1",
+    "css-loader": "^0.28.0",
+    "deep-freeze": "0.0.1",
+    "enzyme": "^2.8.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^6.10.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "karma": "^1.6.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.3",
+    "mocha": "^3.2.0",
+    "node-sass": "^4.5.2",
+    "postcss-loader": "^1.3.3",
+    "react-addons-perf": "^15.4.2",
+    "redux-devtools-extension": "^2.13.0",
+    "redux-logger": "^3.0.1",
+    "sass-lint": "^1.10.2",
+    "sass-loader": "^6.0.3",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.9.0",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2",
+    "why-did-you-update": "0.0.8"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^4.0.0",
+    "react-router-dom": "^4.0.0",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "semantic-ui-react": "^0.67.2"
+  }
+}
