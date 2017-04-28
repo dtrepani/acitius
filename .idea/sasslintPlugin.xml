@@ -2,8 +2,8 @@
 <project version="4">
   <component name="SassLintProjectComponent">
     <option name="configFile" value="acitius\.sass-lint.yml" />
-    <option name="lintExecutable" value="C:\Users\finap\AppData\Roaming\npm\sass-lint.cmd" />
-    <option name="nodeInterpreter" value="D:\Program Files\nodejs\node.exe" />
+    <option name="lintExecutable" value="/usr/local/bin/sass-lint" />
+    <option name="nodeInterpreter" value="/usr/local/bin/node" />
     <option name="pluginEnabled" value="true" />
   </component>
 </project>
