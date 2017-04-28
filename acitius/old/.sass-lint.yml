@@ -1,0 +1,62 @@
+files:
+  include: 'src/content/scss/**/*.scss'
+  ignore:
+    - 'src/content/scss/vendor/**/*.scss'
+    - 'src/content/scss/base/_reset.scss'
+
+options:
+  formatter: stylish
+  merge-default-rules: false
+
+rules:
+  border-zero: 1
+  brace-style: 1
+  class-name-format: 1
+  clean-import-paths: 1
+  declarations-before-nesting: 1
+  empty-line-between-blocks: 1
+  extends-before-declarations: 1
+  extends-before-mixins: 1
+  final-newline: 1
+  function-name-format: 1
+  id-name-format: 1
+  hex-notation:
+    - 1
+    - style: uppercase;
+  indentation:
+    - 1
+    - size: 'tab'
+  leading-zero:
+    - 1
+    - include: true
+  max-line-length:
+    - 1
+    - length: 120
+  mixin-name-format: 1
+  mixins-before-declarations:
+    - 1
+    - exlude: ['breakpoint']
+  nesting-depth:
+    - 1
+    - max-depth: 4
+  no-empty-rulesets: 1
+  no-invalid-hex: 1
+  no-misspelled-properties: 1
+  no-trailing-whitespace: 1
+  no-trailing-zero: 1
+  placeholder-name-format: 1
+  property-sort-order: 
+    - 1
+    - order: 'recess'
+  pseudo-element: 1
+  quotes: 1
+  space-after-colon: 1
+  space-after-comma: 1
+  space-around-operator: 1
+  space-before-bang: 1
+  space-before-brace: 1
+  space-between-parens: 0
+  trailing-semicolon: 1
+  url-quotes: 1
+  variable-name-format: 1
+  zero-unit: 0

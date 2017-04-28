@@ -1,0 +1,80 @@
+[
+	{
+		"name": "News",
+		"icon": "newspaper"
+	},
+	{
+		"name": "My Stuff",
+		"icon": "heart",
+		"subNav": [
+			"Inventory",
+			"Quests",
+			"Achievements",
+			"Collections",
+			"Augmenting",
+			"Achievements",
+			"Cooking",
+			"Fishing",
+			"Gardening",
+			"Galleries"
+		]
+	},
+	{
+		"name": "Pets",
+		"icon": "paw",
+		"subNav": [
+			"My Pets",
+			"Create Pet",
+			"Dating",
+			"Sales",
+			"Gamma Machine",
+			"Enchantments"
+		]
+	},
+	{
+		"name": "Shops",
+		"icon": "shop",
+		"subNav": [
+			"My Shop",
+			"Shops",
+			"Webshop",
+			"Crystal Cavern",
+			"Item Search",
+			"Trades",
+			"Auctions"
+		]
+	},
+	{
+		"name": "Community",
+		"icon": "comments",
+		"subNav": [
+			"Forums",
+			"Aftermath Power",
+			"Online Artist",
+			"Holidays",
+			"Wiki"
+		]
+	},
+	{
+		"name": "World",
+		"icon": "globe",
+		"subNav": [
+			"Explore",
+			"Arena"
+		]
+	},
+	{
+		"name": "Games",
+		"icon": "star"
+	},
+	{
+		"name": "Staff", 
+		"icon" :"users",
+		"admin": true
+	},
+	{
+		"name": "Widgets",
+		"icon": "cogs",
+		"classes": "hidden-lg-up"
+	}
+]

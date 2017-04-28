@@ -1,0 +1,20 @@
+.scrollbar {
+	$scrollbar-radius: 3px;
+
+	&::-webkit-scrollbar-track {
+		border: 0;
+		border-radius: $scrollbar-radius;
+	}
+
+	&::-webkit-scrollbar {
+		width: 5px;
+		background: none;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: rgba($color-primary-border, 0);
+		border-radius: $scrollbar-radius;
+
+		*:hover > & { background: rgba($color-primary-border, 1); }
+	}
+}

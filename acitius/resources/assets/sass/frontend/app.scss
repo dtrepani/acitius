@@ -1,0 +1,40 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+// Variables
+@import 'variables';
+@import 'overrides';
+
+// Vendor
+// TODO: re-enable package version once v4 is released on the sass package
+@import '../vendor/bootstrap/bootstrap';
+//@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import '~font-awesome/scss/font-awesome';
+
+// Core
+@import '../helpers/helpers';
+@import 'global';
+
+// Layout
+@import 'layout/multiple';
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/content';
+@import 'layout/footer';
+
+// Modules
+@import 'modules/ads';
+@import 'modules/scrollbar';
+
+// Widgets
+@import 'widgets/widgets';
+@import 'widgets/chat';
+@import 'widgets/notes';
+
+// Pages
+@import 'pages/dashboard';
+
+// Plugins
+@import '../plugin/toastr/toastr';
+@import '../plugin/sweetalert/sweetalert';

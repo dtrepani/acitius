@@ -1,0 +1,99 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  line-height: normal;
+}
+
+body {
+  font-family: $font-stack;
+  color: $color-primary-text;
+  background: $color-bg url('/img/daytime.jpg') repeat-x;
+}
+
+a {
+  color: $color-accent;
+  transition: color $speed;
+}
+
+button {
+  font-size: $font-base;
+  cursor: pointer;
+  background: $color-accent;
+  border: 0;
+}
+
+h1, h2, h3 {
+  padding: 0;
+  margin: 0;
+  font-family: $font-header-stack;
+}
+
+h1 {
+  @include font-size($font-logo-small);
+  display: inline;
+  color: $color-accent;
+}
+
+h2 {
+  @include font-size($font-large);
+}
+
+h3 {
+  @include font-size($font-medium);
+}
+
+i.icon {
+  height: auto;
+}
+
+nav {
+  & ul {
+    list-style: none;
+  }
+
+  & ul,
+  & li {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+}
+
+
+// Classes
+
+.btn-inside {
+  position: absolute;
+  right: 5px;
+  z-index: 4;
+  height: 100%;
+  color: lighten($color-primary-text, 40%);
+  background: none;
+  border: 0;
+  outline: none;
+  transition: color $speed;
+
+  &:hover { color: $color-accent !important; }
+}
+
+.dropdown.hover-only {
+  .dropdown-menu {
+    display: block !important;
+    transform: scaleY(0);
+    transition: transform .2s ease;
+    transform-origin: center top;
+  }
+
+  &:hover .dropdown-menu {
+    transform: scaleY(1);
+  }
+
+  &.show .dropdown-menu {
+    transform: none;
+  }
+}
+
+.hide-overflow { overflow: hidden; }
+.table-row { display: table-row; }

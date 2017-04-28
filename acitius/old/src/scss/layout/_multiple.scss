@@ -1,0 +1,17 @@
+// For items that span multiple sections (such as the bgs for nav, content, and widgets).
+
+header,
+.header.row,
+footer {
+	color: $color-secondary-text;
+	background: $color-secondary-bg;
+}
+
+#main-nav-container .ui.sticky,
+#widgets-container .ui.sticky {
+	z-index: 799;
+}
+
+#main-nav-container, #widgets-container {
+	max-width: 250px;
+}
