@@ -14,21 +14,29 @@
     display: flex;
     align-items: center;
     margin-bottom: $spacing / 4;
+
+    > i { color: $color-accent; }
+    i:not(:last-child) { margin-right: 5px; }
+  }
+}
+
+.widget-actions {
+  @include font-size(17px);
+  display: flex;
+  align-items: baseline;
+  flex: auto;
+  justify-content: flex-end;
+  color: $color-primary-text-dim;
+
+  * {
+    cursor: pointer;
+    transition: color $speed ease;
+
+    &:hover { color: $color-primary-text; }
   }
 
-  > * {
-    > i:first-child {
-      margin-right: 5px;
-      color: $color-accent;
-    }
+  *:not(:first-child) { margin-left: $spacing / 4; }
 
-    > i:last-child {
-      @include font-size(17px);
-      flex: auto;
-      color: $color-primary-text-dim;
-      text-align: right;
-
-      &::before { cursor: pointer; }
-    }
-  }
+  .minimize { @include font-size($font-large); line-height: 0; }
+  .exit { @include font-size($font-medium); }
 }

@@ -1,6 +1,6 @@
 $chat-msg-spacing: 6px;
 
-.chat {
+.widgets .chat {
   @include font-size($font-small);
   display: flex;
   flex-direction: column;

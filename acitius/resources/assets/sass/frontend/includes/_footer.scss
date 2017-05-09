@@ -1,0 +1,32 @@
+// Footer
+footer {
+  z-index: $zindex-navbar;
+  padding: $spacing;
+  text-align: center;
+  border-top: $border-size solid $color-secondary-border;
+
+  .ad { margin: auto; }
+}
+
+.footer > *:not(:last-child) {
+  margin-bottom: $spacing;
+}
+
+// Footer Items
+.copyright {
+  @include font-size($font-small);
+  color: $color-secondary-text-dim;
+}
+
+.copyright,
+.footer-nav .list {
+  margin: auto;
+}
+
+.footer-nav li {
+  display: inline;
+
+  &:not(:last-child) {
+    margin-right: $spacing;
+  }
+}

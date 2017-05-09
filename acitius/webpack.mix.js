@@ -1,5 +1,5 @@
 const { mix } = require('laravel-mix');
-const path = require('path');
+require('dotenv').config();
 
 /*
  |--------------------------------------------------------------------------
@@ -13,7 +13,7 @@ const path = require('path');
  */
 
 mix.browserSync({
-  proxy: '10.0.75.1',
+  proxy: process.env.DB_HOST,
   open: false
 });
 
@@ -44,7 +44,7 @@ mix
     'vue'
   ]);
 
-if(mix.config.inProduction) {
+if (mix.config.inProduction) {
   mix
     .version()
     .disableNotifications();

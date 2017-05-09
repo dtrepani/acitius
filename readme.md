@@ -2,7 +2,7 @@
 
 
 ## Todo
-My own personal todo list for things I'd otherwise forget
+My own personal todo list for things I'd otherwise forget.
 
 ### Features
 - [ ] Watch threads (get notifications when they update)
@@ -33,10 +33,37 @@ Suggestions by staff members that will eventually be implemented.
 ### Layout
 - [ ] Accessible delete/sticky/lock/move options within thread as well as outside of
 
+
 ## Documentation
 Notes for the future devs who may or may not be familiar with certain tools. The definitions used here are heavily simplified. Generally, the settings of each of the tools used will not need to be tweaked. Any tools that need special configurations will be described.
 
 `/` will refer to the root directory of the project. All commands will assume you're in the root directory.
+
+
+### General
+- Icons: [FontAwesome](http://fontawesome.io/icons/) is used for all icons.
+- Javascript: Our Javascript is written using the ES6/ECMA2015 standard and compiled to be compatible with older browsers using Webpack and [Babel](https://babeljs.io/).
+
+
+### [Laravel](https://laravel.com/docs/5.4)
+PHP framework that makes pretty much everything PHP a bit easier. Created from [Laravel Boilerplate](http://laravel-boilerplate.com/) (which is documented) to make life even easier.
+
+
+### [Docker](https://www.docker.com/) and [Laradock](http://laradock.io/) - `/laradock/.env`
+A container to easily maintain development environments across machines. In our case, it supplies Nginx, MySQL, PHP, and the like without needing to do any setup on your own machine.
+
+- *Local* Static IP: [10.0.75.1](http://10.0.75.1) or, if not that, found via `docker-machine ip`
+
+
+### [Webpack](https://webpack.js.org/configuration/) - `/acitius/webpack.config.js`
+Compiles our modular JS and CSS from `/acitius/src/` together into `/acitius/public/`. This will take care of making all CSS and JS compatible with older browsers.
+
+
+### [SCSS (CSS)](http://sass-lang.com/documentation/file.SASS_REFERENCE.html) - `/acitius/resources/assets/sass/`
+Adds variables and functions to CSS. The difference between SASS and SCSS is syntax. We're using SCSS.
+
+- Adding files: Remember to import any new files into app.scss
+
 
 
 ### Setup
@@ -50,7 +77,7 @@ Development setup on your machine. Once again, simplified. See [here](http://lar
 6. `cp .envapp acitius/.env`
 7. `cd laradock`
 8. `docker-compose up -d nginx mysql`
-9. `docker exec workspace bash`
+9. `docker-compose exec workspace bash`
 10. `composer install`
 11. `npm install`
 12. `php artisan key:generate`
@@ -86,27 +113,18 @@ Commands to run in terminal in various situations. Assumes you're already in roo
 - Build project for development: `npm run build:dev`
 
 
-### General
-- Icons: [FontAwesome](http://fontawesome.io/icons/) is used for all icons.
-- Javascript: Our Javascript is written using the ES6/ECMA2015 standard and compiled to be compatible with older browsers using Webpack and [Babel](https://babeljs.io/).
+### Troubleshooting
+**Browser console yelling about invalid inputs or unknown characters**
 
+Likely caused by an error with nginx's sendfile option, which is normally used for speed optimizations.
 
-### [Laravel](https://laravel.com/docs/5.4)
-PHP framework that makes pretty much everything PHP a bit easier. Created from [Laravel Boilerplate](http://laravel-boilerplate.com/) (which is documented) to make life even easier.
+1. Open `/laradock/nginx/nginx.conf`
+2. Change `sendfile on;` to `sendfile off;`
+3. In terminal, restart nginx `cd laradock && docker-compose build nginx`
+4. Restart docker containers `docker-compose up -d nginx mysql`
 
+**If using Docker Toolbox: Received `ERROR: Couldn't connect to Docker daemon` when attempting docker-compose and the docker machine is already started**
 
-### [Docker](https://www.docker.com/) and [Laradock](http://laradock.io/) - `/laradock/.env`
-A container to easily maintain development environments across machines. In our case, it supplies Nginx, MySQL, PHP, and the like without needing to do any setup on your own machine.
+A known bug with docker-compose and Docker Toolbox.
 
-- *Local* Static IP: [10.0.75.1](http://10.0.75.1)
-
-### [Webpack](https://webpack.js.org/configuration/) - `/acitius/webpack.config.js`
-Compiles our modular JS and CSS from `/acitius/src/` together into `/acitius/public/`. This will take care of making all CSS and JS compatible with older browsers.
-
-
-### [SCSS (CSS)](http://sass-lang.com/documentation/file.SASS_REFERENCE.html) - `/acitius/resources/assets/sass/`
-Adds variables and functions to CSS. The difference between SASS and SCSS is syntax. We're using SCSS.
-
-- Adding files: Remember to import any new files into app.scss
-
-
+1. In terminal, type `eval "$(docker-machine env default)"`

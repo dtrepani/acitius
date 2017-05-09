@@ -1,4 +1,4 @@
-<div class="{{ $id }} card" role="tab">
+<div class="{{ $id }} card nav-item" role="tab">
     <a
         title="{{ $name }}"
         id="{{ $id }}"

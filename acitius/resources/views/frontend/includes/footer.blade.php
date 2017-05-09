@@ -1,6 +1,6 @@
 <footer>
     <div class="footer container justify-content-center">
-        <div class="ad ad-leaderboard"></div>
+        <div class="ad ad-leaderboard hidden-sm-down"></div>
 
         <nav class="footer-nav py-2">
             <ul class="justify-content-center">

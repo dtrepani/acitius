@@ -17,14 +17,16 @@
 @import 'global';
 
 // Layout
-@import 'layout/multiple';
-@import 'layout/header';
-@import 'layout/nav';
-@import 'layout/content';
-@import 'layout/footer';
+@import 'includes/multiple';
+@import 'includes/header';
+@import 'includes/nav';
+@import 'includes/content';
+@import 'includes/footer';
 
 // Modules
+@import 'modules/fixed';
 @import 'modules/ads';
+@import 'modules/overlay';
 @import 'modules/scrollbar';
 
 // Widgets
@@ -34,6 +36,7 @@
 
 // Pages
 @import 'pages/dashboard';
+@import 'pages/main';
 
 // Plugins
 @import '../plugin/toastr/toastr';

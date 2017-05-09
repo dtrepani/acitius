@@ -15,6 +15,10 @@ body {
 a {
   color: $color-accent;
   transition: color $speed;
+
+  &:hover {
+    color: $color-accent-dim !important;
+  }
 }
 
 button {
@@ -63,7 +67,6 @@ nav {
 
 
 // Classes
-
 .btn-inside {
   position: absolute;
   right: 5px;
@@ -96,4 +99,17 @@ nav {
 }
 
 .hide-overflow { overflow: hidden; }
+
+.no-opacity { opacity: 0 !important; }
+
+.search {
+  .btn-inside { right: .5em; }
+
+  input {
+    padding-right: 43px;
+    border-color: $color-primary-border;
+    border-radius: 3em !important;
+  }
+}
+
 .table-row { display: table-row; }

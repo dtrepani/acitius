@@ -7,11 +7,12 @@
         "jquery": true
     },
     "parserOptions": {
+        "sourceType": "module",
         "ecmaFeatures": {
             "impliedStrict": true,
             "modules": true
         },
-        "plugins": ["lodash"]
+        "plugins": ["lodash", "vue"]
     },
     "rules": {
         "valid-jsdoc": [

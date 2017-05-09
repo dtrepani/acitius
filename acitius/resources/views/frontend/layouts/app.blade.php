@@ -35,11 +35,37 @@
             @include('includes.partials.logged-in-as')
             @include('frontend.includes.header')
 
+            <div class="overlay hidden"></div>
+
+            <div class="fixed">
+                <div class="pinned widgets">
+                    <div class="card">
+                        @include('frontend.includes.widgets.chat')
+                    </div>
+                </div>
+
+                <div class="fixed-actions">
+                    <div class="top-scroller">
+                        <i class="fa fa-arrow-up"></i>
+                    </div>
+                    <div class="widget-heads">
+                        <span class="fa-stack fa-lg chat">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-comment fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span class="fa-stack fa-lg notes">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
             <div class="main-container container py-md-4">
                 <div class="row">
                     @include('frontend.includes.nav')
 
-                    <main class="col mr-md-2">
+                    <main class="col mr-md-2 px-0 px-md-3">
                         <div class="card">
                             <div class="card-block">
                                 @include('includes.partials.messages')

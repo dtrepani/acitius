@@ -1,0 +1,9 @@
+main {
+  min-width: 0;
+
+  .overlay.active ~ .main-container & {
+    overflow: hidden;
+  }
+
+  .card, .card-block { height: 100%; }
+}

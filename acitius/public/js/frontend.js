@@ -1,89 +1,8 @@
-webpackJsonp([1],{
-
-/***/ 18:
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function($) {/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-__webpack_require__(9);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('example', __webpack_require__(41));
-
-var app = new Vue({ el: '#app' });
-
-$(function () {
-  saveNavState();
-  setNavHover();
-});
-
-function saveNavState() {
-  var $navAccordion = $('#nav-accordion');
-
-  $navAccordion.on('shown.bs.collapse', function () {
-    localStorage.setItem('collapseItem', $navAccordion.find('.collapse.show').attr('id'));
-  });
-
-  $navAccordion.on('hide.bs.collapse', function () {
-    var closingItem = $navAccordion.find('.collapse.show').attr('id');
-    if (collapseItem === closingItem) {
-      localStorage.removeItem('collapseItem');
-    }
-  });
-
-  var collapseItem = localStorage.getItem('collapseItem');
-  if (collapseItem) {
-    $('#' + collapseItem).collapse('show');
-  }
-}
-
-function setNavHover() {
-  var timeout = void 0;
-  var $navAccordion = $('#nav-accordion');
-
-  $navAccordion.on('mouseenter.collapse.data-api', '[data-toggle=collapse]', showNavInX);
-  $navAccordion.on('mouseleave.collapse.data-api', '[data-toggle=collapse]', clearShowNavInX);
-
-  // $title.hover(showNavInX, clearShowNavInX);
-  $navAccordion.click(clearShowNavInX);
-
-  function clearShowNavInX() {
-    console.log(timeout);
-    clearTimeout(timeout);
-  }
-
-  function showNavInX(e) {
-    var href = void 0;
-    var $this = $(this);
-    var target = $this.attr('data-target') || e.preventDefault() || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '');;
-    var $target = $(target);
-
-    console.log($this.data());
-
-    if ($this.hasClass('collapsed')) {
-      console.log("set timeout");
-      clearShowNavInX();
-      timeout = setTimeout(function () {
-        console.log("trigger timeout");
-        $target.collapse($this.data());
-      }, 500);
-    }
-  }
-}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-
-/***/ 2:
+webpackJsonp([1],[
+/* 0 */,
+/* 1 */,
+/* 2 */,
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var require;var require;var __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -410,8 +329,7 @@ var require;var require;var __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof S
 }(window, document);
 
 /***/ }),
-
-/***/ 3:
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {var _this2 = this;
@@ -539,11 +457,270 @@ $(function () {
     });
   });
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 39:
+window._ = __webpack_require__(2);
+
+/**
+ * We'll load jQuery and the Bootstrap jQuery plugin which provides support
+ * for JavaScript based Bootstrap features such as modals and tabs. This
+ * code may be modified to fit the specific needs of your application.
+ *
+ * See webpack config's autoload for jquery and tether's assignment
+ */
+
+__webpack_require__(6);
+
+/**
+ * Vue is a modern JavaScript library for building interactive web interfaces
+ * using reactive data binding and reusable components. Vue's API is clean
+ * and simple, leaving you to focus on building your next great project.
+ */
+
+window.Vue = __webpack_require__(7);
+
+/**
+ * We'll load the axios HTTP library which allows us to easily issue requests
+ * to our Laravel back-end. This library automatically handles sending the
+ * CSRF token as a header based on the value of the "XSRF" token cookie.
+ */
+
+window.axios = __webpack_require__(5);
+
+window.axios.defaults.headers.common = {
+  'X-CSRF-TOKEN': window.Laravel.csrfToken,
+  'X-Requested-With': 'XMLHttpRequest'
+};
+
+/**
+ * Echo exposes an expressive API for subscribing to channels and listening
+ * for events that are broadcast by Laravel. Echo and event broadcasting
+ * allows your team to easily build robust real-time web applications.
+ */
+
+// import Echo from 'laravel-echo'
+
+// window.Pusher = require('pusher-js');
+
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: 'your-pusher-key'
+// });
+
+/***/ }),
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/* eslint-disable no-console */
+
+
+
+var HoverTemplate = function () {
+  /**
+   * @param {string} trigger - Name of element that triggers the hover events.
+   *
+   * @see http://api.jquery.com/on/
+   * @param {?string} eventApi - Event API to listen for, if any. Does not include the "mouseenter"
+   *                             or "mouseleave" portion. For example, "mouseenter.collapse.data-api"
+   *                             would be passed through as "collapse.data-api"
+   * @param {?string} selector
+   */
+  function HoverTemplate(trigger) {
+    var eventApi = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+    var selector = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+
+    _classCallCheck(this, HoverTemplate);
+
+    this.eventApi = eventApi;
+    this.selector = selector;
+    this.trigger = $(trigger);
+
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_lodash__["bindAll"])(this, ['_actionOnHover', '_actionOnMouseLeave', '_setActionTimeout']);
+
+    this._setHover();
+  }
+
+  _createClass(HoverTemplate, [{
+    key: '_actionOnHover',
+    value: function _actionOnHover(e) {
+      if (this._hoverCriteriaIsMet(e)) {
+        this._setActionTimeout(e);
+      }
+    }
+  }, {
+    key: '_actionOnMouseLeave',
+    value: function _actionOnMouseLeave(e) {
+      this._clearActionTimeout();
+      this._afterMouseLeaveHook();
+    }
+
+    /**
+     * Actions to take after the mouse leaves event. Can be used to undo hover action.
+     * @private
+     * @abstract
+     */
+
+  }, {
+    key: '_afterMouseLeaveHook',
+    value: function _afterMouseLeaveHook() {} // eslint-disable-line
+
+  }, {
+    key: '_clearActionTimeout',
+    value: function _clearActionTimeout() {
+      clearTimeout(this.timeout);
+    }
+
+    /**
+     * Actual action to be performed on hover. Will usually take the form of target.fn();
+     * @private
+     * @abstract
+     */
+
+  }, {
+    key: '_hoverAction',
+    value: function _hoverAction(e) {
+      console.log('Must override method _hoverAction.');
+    }
+
+    /**
+     * May not always want to trigger the hover action on mouse enter.
+     * @param {object} e - Event information from mouseenter
+     * @returns {boolean} - Whether or not the hover action should be triggered.
+     * @private
+     * @abstract
+     */
+
+  }, {
+    key: '_hoverCriteriaIsMet',
+    value: function _hoverCriteriaIsMet(e) {
+      console.log('Must override method _hoverCriteriaIsMet.');
+    }
+  }, {
+    key: '_setActionTimeout',
+    value: function _setActionTimeout(e) {
+      var that = this;
+      this._clearActionTimeout();
+
+      this.timeout = setTimeout(function () {
+        that._hoverAction(e);
+      }, 500);
+    }
+  }, {
+    key: '_setHover',
+    value: function _setHover() {
+      // Prefix the event api with a dot if it exists in order to attach it to the mouseenter
+      // and mouseleave events.
+      var eventApi = this.eventApi === '' ? this.eventApi : '.' + this.eventApi;
+
+      this.trigger.on('mouseenter' + eventApi, this.selector, this._actionOnHover);
+      this.trigger.on('mouseleave' + eventApi, this.selector, this._actionOnMouseLeave);
+
+      this._setupOtherActions();
+    }
+
+    /**
+     * May need other actions to be performed that effects the hover action, such as a click
+     * that cancels the hover action.
+     * @private
+     * @abstract
+     */
+
+  }, {
+    key: '_setupOtherActions',
+    value: function _setupOtherActions() {} // eslint-disable-line
+
+  }]);
+
+  return HoverTemplate;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (HoverTemplate);
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+
+/***/ }),
+/* 17 */,
+/* 18 */,
+/* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__bootstrap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__setup_nav_hover__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__setup_nav_storage__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__setup_header_hover__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__setup_sidebar_setup__ = __webpack_require__(44);
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+
+
+
+
+
+
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+Vue.component('example', __webpack_require__(47));
+
+var app = new Vue({ el: '#app' });
+
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__setup_nav_storage__["a" /* default */])();
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__setup_sidebar_setup__["a" /* default */])();
+var navHover = new __WEBPACK_IMPORTED_MODULE_1__setup_nav_hover__["a" /* default */]();
+var headerHover = new __WEBPACK_IMPORTED_MODULE_3__setup_header_hover__["a" /* default */]();
+
+/***/ }),
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -572,21 +749,326 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
+/* 41 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/***/ 41:
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__hover_template__ = __webpack_require__(16);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var HeaderSetup = function (_HoverTemplate) {
+  _inherits(HeaderSetup, _HoverTemplate);
+
+  function HeaderSetup() {
+    _classCallCheck(this, HeaderSetup);
+
+    return _possibleConstructorReturn(this, (HeaderSetup.__proto__ || Object.getPrototypeOf(HeaderSetup)).call(this, '.user.dropdown', 'dropdown.data-api', '[data-toggle=dropdown]'));
+  }
+
+  /** @override */
+
+
+  _createClass(HeaderSetup, [{
+    key: '_hoverAction',
+    value: function _hoverAction(e) {
+      $('#user-dropdown-toggle').dropdown('toggle');
+    }
+
+    /** @override */
+
+  }, {
+    key: '_hoverCriteriaIsMet',
+    value: function _hoverCriteriaIsMet(e) {
+      return !$('.user.dropdown').hasClass('show');
+    }
+
+    /** @override */
+
+  }, {
+    key: '_setupOtherActions',
+    value: function _setupOtherActions() {
+      var _this2 = this;
+
+      $('#user-dropdown-toggle').click(function () {
+        _this2._clearActionTimeout();
+      });
+    }
+  }]);
+
+  return HeaderSetup;
+}(__WEBPACK_IMPORTED_MODULE_0__hover_template__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (HeaderSetup);
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+
+/***/ }),
+/* 42 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__hover_template__ = __webpack_require__(16);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var NavSetup = function (_HoverTemplate) {
+  _inherits(NavSetup, _HoverTemplate);
+
+  function NavSetup() {
+    _classCallCheck(this, NavSetup);
+
+    return _possibleConstructorReturn(this, (NavSetup.__proto__ || Object.getPrototypeOf(NavSetup)).call(this, '#nav-accordion', 'collapse.data-api', '[data-toggle=collapse]'));
+  }
+
+  _createClass(NavSetup, [{
+    key: '_hoverAction',
+
+
+    /** @override */
+    value: function _hoverAction(e) {
+      var href = void 0;
+      var $hovered = $(e.target);
+      var target = $hovered.attr('data-target') || e.preventDefault() || (href = $hovered.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '');
+
+      NavSetup._hideOpenNav();
+      $(target).collapse('show');
+    }
+
+    /** @override */
+
+  }, {
+    key: '_hoverCriteriaIsMet',
+    value: function _hoverCriteriaIsMet(e) {
+      return $(e.target).hasClass('collapsed');
+    }
+
+    /** @override */
+
+  }, {
+    key: '_setupOtherActions',
+    value: function _setupOtherActions() {
+      var _this2 = this;
+
+      $('.title[data-toggle="collapse"]').click(function () {
+        NavSetup._hideOpenNav();
+        _this2._clearActionTimeout();
+      });
+    }
+  }], [{
+    key: '_hideOpenNav',
+    value: function _hideOpenNav() {
+      $('.main-subnav.collapse.show').collapse('hide');
+    }
+  }]);
+
+  return NavSetup;
+}(__WEBPACK_IMPORTED_MODULE_0__hover_template__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (NavSetup);
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+
+/***/ }),
+/* 43 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {/* harmony default export */ __webpack_exports__["a"] = (function () {
+  var $navAccordion = $('#nav-accordion');
+
+  $navAccordion.on('shown.bs.collapse', function () {
+    localStorage.setItem('collapseItem', $navAccordion.find('.collapse.show').attr('id'));
+  });
+
+  $navAccordion.on('hide.bs.collapse', function () {
+    var closingItem = $navAccordion.find('.collapse.show').attr('id');
+    if (collapseItem === closingItem) {
+      localStorage.removeItem('collapseItem');
+    }
+  });
+
+  var collapseItem = localStorage.getItem('collapseItem');
+  if (collapseItem) {
+    $('#' + collapseItem).collapse('show');
+  }
+});
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+
+/***/ }),
+/* 44 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_get_class_prop__ = __webpack_require__(45);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  var $sidebar = $('.aside-nav');
+  var $main = $('main');
+  var $overlay = $('.overlay');
+  var mdWidth = parseInt(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__modules_get_class_prop__["a" /* default */])('width', 'breakpoint-md'), 10);
+  var transitionSpeed = parseFloat(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__modules_get_class_prop__["a" /* default */])('transition-duration', 'speed')) * 1000;
+  var prevWindowWidth = void 0,
+      contentTimeout = void 0,
+      overlayTimeout = void 0;
+
+  toggleSidebarAsNeeded();
+
+  $(window).resize(toggleSidebarAsNeeded);
+
+  $sidebar.on('sidebar.toggle', toggleSidebar);
+  $('#nav-accordion').on('show.bs.collapse', showSidebarWhenSubnavExpanded);
+
+  $('.toggle-nav').click(function () {
+    $sidebar.trigger('sidebar.toggle');
+  });
+  $overlay.click(function () {
+    if (!sidebarIsClosed()) {
+      toggleSidebar();
+    }
+  });
+
+  /**
+   * Min-width is set back to 0 after the class is toggled and animation takes place to avoid
+   * the content's width from changing while the sidebar is still transitioning;
+   */
+  function setContentMinWidthTimeout() {
+    clearTimeout(contentTimeout);
+
+    contentTimeout = setTimeout(function () {
+      if (sidebarIsClosed()) {
+        $main.css('min-width', 0);
+      }
+    }, transitionSpeed);
+  }
+
+  /**
+   * Overlay should be hidden after it has finished transitioning to inactive. Because the
+   * timeout could be cancelled, check whether the overlay is active to decide whether or
+   * not to hide the overlay (instead of merely toggling its hidden state).
+   */
+  function setOverlayHideTimeout() {
+    clearTimeout(overlayTimeout);
+
+    if (sidebarIsClosed()) {
+      $overlay.removeClass('hidden');
+    } else {
+      overlayTimeout = setTimeout(function () {
+        $overlay.addClass('hidden');
+      }, transitionSpeed);
+    }
+  }
+
+  function sidebarIsClosed() {
+    return $sidebar.hasClass('closed');
+  }
+
+  function showSidebarWhenSubnavExpanded() {
+    if (sidebarIsClosed()) {
+      $sidebar.trigger('sidebar.toggle');
+    }
+  }
+
+  function toggleSidebar() {
+    if (sidebarIsClosed()) {
+      $main.css('min-width', $main.width());
+    }
+    setContentMinWidthTimeout();
+
+    setOverlayHideTimeout();
+    $('.overlay').toggleClass('active');
+
+    toggleSidebarOnly();
+  }
+
+  function toggleSidebarAsNeeded() {
+    var currWindowWidth = $(window).width();
+
+    if (transitionedFromDesktopToMobileWidths(currWindowWidth) || transitionedFromMobileToDesktopWidths(currWindowWidth)) {
+      toggleSidebarOnly();
+    }
+
+    prevWindowWidth = currWindowWidth;
+  }
+
+  /**
+   * On initial page load and the transition from desktop to mobile widths, the content's
+   * min-width does not to be changed, only the sidebar is affected.
+   */
+  function toggleSidebarOnly() {
+    var $elemsInSidebarNotNav = $sidebar.children('*:not(.main-nav)');
+
+    if (!$sidebar.hasClass('closed')) {
+      $('.main-subnav.collapse.show').collapse('hide');
+    }
+
+    $sidebar.toggleClass('closed');
+    $elemsInSidebarNotNav.toggleClass('hidden');
+    $('.main-nav .title .name').toggleClass('no-opacity');
+  }
+
+  function transitionedFromDesktopToMobileWidths(currWindowWidth) {
+    return currWindowWidth <= mdWidth && (prevWindowWidth === undefined || prevWindowWidth > mdWidth);
+  }
+
+  function transitionedFromMobileToDesktopWidths(currWindowWidth) {
+    return currWindowWidth > mdWidth && (prevWindowWidth === undefined || prevWindowWidth <= mdWidth) && sidebarIsClosed();
+  }
+});
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+
+/***/ }),
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {/**
+ * Get a CSS property value from a specified class or class combination.
+ * @param {string} property
+ * @param {string} fromClass - Can add multiple classes using spaces as separators
+ *                             @see https://api.jquery.com/addclass/
+ * @returns {string}
+ */
+/* harmony default export */ __webpack_exports__["a"] = (function (property, fromClass) {
+  var $elemWithClass = $('<div>').css('display', 'none').addClass(fromClass);
+  $('body').append($elemWithClass);
+
+  var val = $elemWithClass.css(property);
+  $elemWithClass.remove();
+
+  return val;
+});
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+
+/***/ }),
+/* 46 */,
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(42)(
+var Component = __webpack_require__(48)(
   /* script */
-  __webpack_require__(39),
+  __webpack_require__(40),
   /* template */
-  __webpack_require__(43),
+  __webpack_require__(49),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Users\\finap\\git\\acitius\\acitius\\resources\\assets\\js\\components\\frontend\\Example.vue"
+Component.options.__file = "/Users/fina/git/acitius/acitius/resources/assets/js/components/frontend/Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -607,8 +1089,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-
-/***/ 42:
+/* 48 */
 /***/ (function(module, exports) {
 
 // this module is a runtime utility for cleaner component module output and will
@@ -665,8 +1146,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-
-/***/ 43:
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -695,68 +1175,16 @@ if (false) {
 }
 
 /***/ }),
-
-/***/ 47:
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(18);
-__webpack_require__(2);
-module.exports = __webpack_require__(3);
+__webpack_require__(19);
+__webpack_require__(3);
+module.exports = __webpack_require__(4);
 
-
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, exports, __webpack_require__) {
-
-window._ = __webpack_require__(6);
-
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- *
- * See webpack config's autoload for jquery and tether's assignment
- */
-
-__webpack_require__(5);
-
-/**
- * Vue is a modern JavaScript library for building interactive web interfaces
- * using reactive data binding and reusable components. Vue's API is clean
- * and simple, leaving you to focus on building your next great project.
- */
-
-window.Vue = __webpack_require__(7);
-
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
-window.axios = __webpack_require__(4);
-
-window.axios.defaults.headers.common = {
-  'X-CSRF-TOKEN': window.Laravel.csrfToken,
-  'X-Requested-With': 'XMLHttpRequest'
-};
-
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-
-// import Echo from 'laravel-echo'
-
-// window.Pusher = require('pusher-js');
-
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
-// });
 
 /***/ })
-
-},[47]);
+],[53]);

@@ -1,0 +1,14 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zindex-navbar - 10;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity $speed ease;
+
+  &.active { opacity: .7; }
+  &.hidden { visibility: hidden; }
+}

@@ -1,0 +1,47 @@
+.fixed {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: $zindex-fixed;
+  display: flex;
+}
+
+// Actions
+.fixed-actions {
+  position: relative;
+  right: $spacing / 3;
+  bottom: $spacing / 3;
+  align-self: flex-end;
+  margin-left: $spacing / 2;
+  text-align: center;
+  cursor: pointer;
+  opacity: .7;
+}
+
+.top-scroller {
+  @include font-size($font-large);
+  margin-bottom: $spacing / 4;
+}
+
+.widget-heads > * {
+  @include font-size($font-large);
+  display: block;
+}
+
+// Pinned Widgets
+.pinned.widgets {
+  .widget { margin-bottom: 0; }
+
+  > * {
+    max-width: $sides-width;
+    padding: $spacing / 3;
+    background: $color-secondary-box-bg;
+    border: $color-secondary-border;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    opacity: .95;
+
+    h2 { color: $color-secondary-text; }
+    .widget-actions > *:hover { color: $color-secondary-text; }
+  }
+}

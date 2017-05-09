@@ -1,0 +1,22 @@
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow-x: hidden;
+
+  .main-container {
+    display: flex;
+    flex: 1;
+
+    .row { flex-direction: row; flex-wrap: nowrap; }
+  }
+}
+
+.asides-sticky {
+  position: sticky;
+  top: $header-height + 10px;
+}
+
+// Javascript classes (share scss variables with javascript using get-class-prop.js)
+.breakpoint-md { width: map-get($grid-breakpoints, md); }
+.speed { transition-duration: $speed; }

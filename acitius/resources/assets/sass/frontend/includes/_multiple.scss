@@ -1,0 +1,20 @@
+// For items that span multiple sections (such as the bgs for nav, content, and widgets).
+.header,
+footer {
+  color: $color-secondary-text;
+  background: $color-secondary-bg;
+}
+
+main .card,
+aside.card {
+  @include media-breakpoint-down(sm) {
+    border-radius: 0;
+  }
+
+  background-color: $color-primary-bg;
+}
+
+.aside-nav,
+.widgets {
+  width: $sides-width;
+}
